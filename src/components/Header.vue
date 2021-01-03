@@ -4,7 +4,7 @@
     <div class="video-container">
       <video autoplay loop muted :src="headerVideo" type="video/mp4"></video>
     </div>
-    <a href="#"><i class="fas fa-angle-down"></i></a>
+    <a href="#mission"><i class="fas fa-angle-down"></i></a>
   </header>
 </template>
 

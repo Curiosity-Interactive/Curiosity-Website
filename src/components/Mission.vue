@@ -1,11 +1,10 @@
 <template>
   <section>
-    <h1>MISSION</h1>
     <h2>
-      Nous sommes un jeune studio qui se spécialise dans les arts multimédias
-      interactifs. Mettant de l'avant les engins en temps réels, nous visons à
-      créer des expériences interactives qui permettent au public d'agir au
-      coeur de même de l'histoire.
+      Curiosity offre des services de production d’expériences
+      multi-sensorielles interactives alliant technologies et créations
+      multimédias pour des fins de marketing, de design architectural et de
+      visibilité numérique dans l’espace publique.
     </h2>
   </section>
 </template>
@@ -28,7 +27,6 @@ section {
   align-items: center;
   justify-content: center;
 
-
   h1 {
     position: absolute;
     top: 20px;
@@ -43,6 +41,12 @@ section {
     text-align: center;
     line-height: 4rem;
     font-size: 2.5rem;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    h2 {
+      font-size: 2em;
+    }
   }
 }
 </style>>

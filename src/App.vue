@@ -2,7 +2,8 @@
   <div id="app">
     <Menu/>
     <Header />
-    <Mission />
+    <Mission id="mission"/>
+    <Contact />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Menu from "./components/Menu.vue";
 import Header from "./components/Header.vue";
 import Mission from "./components/Mission.vue";
+import Contact from "./components/Contact.vue";
 
 export default {
   name: "app",
@@ -20,6 +22,7 @@ export default {
     Menu,
     Header,
     Mission,
+    Contact
   },
   methods: {},
 };
