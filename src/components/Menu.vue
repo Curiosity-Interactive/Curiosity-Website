@@ -5,31 +5,30 @@
       <span class="hamburger"></span>
     </span>
     <ul>
-      <li>
-        <a href="#">Projets</a>
-      </li>
-      <li>
-        <a href="#">Mission</a>
-      </li>
-      <li>
-        <a href="#">curiosity lab</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
-      <li>
-        <a class="language" href="#">english</a>
+      <li v-for="item in items" v-bind:key="item">
+        <a :href="item.url">{{ item.name }}</a>
       </li>
     </ul>
   </label>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        { id: 1, name: "projets", url: "#" },
+        { id: 2, name: "mission", url: "#" },
+        { id: 3, name: "curiosity lab", url: "#" },
+        { id: 4, name: "contact", url: "#" },
+        { id: 5, name: "english", url: "#" },
+      ],
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
-$menuColor: #000000;
-$text-color: white;
-
 label {
   .menu {
     position: fixed;
@@ -38,12 +37,13 @@ label {
     z-index: 100;
     width: 200px;
     height: 200px;
-    background: black;
     border-radius: 50% 50% 50% 50%;
     transition: 0.2s ease-in-out;
     cursor: pointer;
   }
   .hamburger {
+    @extend .gradient-animation-values-shape;
+    @include animation("bgposition 10s infinite");
     position: absolute;
     top: 135px;
     left: 50px;
@@ -52,27 +52,17 @@ label {
     display: block;
     transform-origin: center;
     transition: 0.2s ease-in-out;
-    background: linear-gradient(238deg, #333399, #ff6699, #006699);
-    background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 12s ease infinite;
-    -moz-animation: AnimationName 12s ease infinite;
-    animation: AnimationName 12s ease infinite;
 
     &:after,
     &:before {
+      @extend .gradient-animation-values-shape;
+      @include animation("bgposition 12s infinite");
       transition: 0.2s ease-in-out;
       content: "";
       position: absolute;
       display: block;
       width: 100%;
       height: 100%;
-      background: linear-gradient(238deg, #333399, #ff6699, #006699);
-      background-size: 600% 600%;
-
-      -webkit-animation: AnimationName 12s ease infinite;
-      -moz-animation: AnimationName 12s ease infinite;
-      animation: AnimationName 12s ease infinite;
     }
     &:before {
       top: -10px;
@@ -85,14 +75,17 @@ label {
     display: none;
   }
   input:checked + .menu {
-    box-shadow: 0 0 0 100vw $menuColor, 0 0 0 100vh $menuColor;
+    box-shadow: 0 0 0 100vw $dark-color, 0 0 0 100vh $dark-color;
     border-radius: 0;
+    background: $dark-color;
+
     .hamburger {
       transform: rotate(45deg);
       &:after {
         transform: rotate(90deg);
         bottom: 0;
       }
+
       &:before {
         transform: rotate(90deg);
         top: 0;
@@ -107,6 +100,7 @@ label {
 
   ul {
     z-index: 200;
+    line-height: 3rem;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -118,85 +112,34 @@ label {
     visibility: hidden;
 
     a {
-      font-family: "Lachata", Helvetica, sans-serif;
+      @include lachata(3.5rem);
       margin-bottom: 0.5em;
-      font-size: 4rem;
       display: block;
-      color: $text-color;
+      color: $light-color;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: bold;
       user-select: none;
       opacity: 0.3;
-      transition: opacity 0.5s ease-out;
-      transition: font-size 0.3s ease-out;
+      transition: opacity 0.5s ease-in-out;
+      transition: transform 0.2s ease-in-out;
     }
 
     .language {
       font-size: 1rem;
     }
 
-    .language:hover {
-      font-size: 2rem;
-    }
-
     a:hover {
       opacity: 1;
-      font-size: 5rem;
-      background: linear-gradient(238deg, #333399, #ff6699, #006699);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-      -webkit-animation: AnimationName 12s ease infinite;
-      -moz-animation: AnimationName 12s ease infinite;
-      animation: AnimationName 12s ease infinite;
-      background-size: 200% auto;
-    }
-  }
-
-  @-webkit-keyframes AnimationName {
-    0% {
-      background-position: 0% 35%;
-    }
-    50% {
-      background-position: 100% 66%;
-    }
-    100% {
-      background-position: 0% 35%;
-    }
-  }
-  @-moz-keyframes AnimationName {
-    0% {
-      background-position: 0% 35%;
-    }
-    50% {
-      background-position: 100% 66%;
-    }
-    100% {
-      background-position: 0% 35%;
-    }
-  }
-  @keyframes AnimationName {
-    0% {
-      background-position: 0% 35%;
-    }
-    50% {
-      background-position: 100% 66%;
-    }
-    100% {
-      background-position: 0% 35%;
+      transform: scale(1.2);
+      @extend .gradient-animation-values-text;
+      @include animation("bgposition 12s infinite");
     }
   }
 
   @media only screen and (max-width: 1024px) {
     ul a {
-      font-size: 2.5rem;
-      margin-bottom: 1em;
-    }
-
-    ul a:hover {
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
   }
 }

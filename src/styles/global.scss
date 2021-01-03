@@ -1,1 +1,66 @@
-$color : red;
+//GRADIENT
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+@include keyframes(bgposition) {
+    0% {
+        background-position: 0% 35%;
+    }
+    50% {
+        background-position: 100% 66%;
+    }
+    100% {
+        background-position: 0% 35%;
+    }
+}
+
+.gradient-animation-values-text {
+    background: linear-gradient(238deg, #333399, #ff6699, #006699);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+}
+
+.gradient-animation-values-shape {
+    background: linear-gradient(238deg, #333399, #ff6699, #006699);
+    background-size: 600% 600%;
+}
+
+//FONTS
+@mixin nexafont($fontsize) {
+    font-family: "Nexa", Helvetica, Arial;
+    font-size: $fontsize;
+}
+
+@mixin lachata($fontsize) {
+    font-family: "Lachata", Helvetica, sans-serif;
+    font-size: $fontsize;
+}
+
+//COLORS
+$dark-color: black;
+$light-color: white;

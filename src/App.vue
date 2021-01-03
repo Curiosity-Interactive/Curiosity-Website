@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Menu />
+    <Menu/>
     <Header />
     <Mission />
   </div>
@@ -25,7 +25,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Nexa";
   src: local("Nexa"), url(./font/NexaBook.otf) format("opentype");
@@ -36,73 +42,31 @@ export default {
   src: local("Lachata"), url(./font/La-chata-normal.ttf) format("truetype");
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  line-height: 1.4;
   overflow-x: hidden;
-  font-family: "Nexa", Helvetica, Arial;
+  @include nexafont(1rem);
 }
 
-/* width */
+#app {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
+
+  &-track {
+    background: $dark-color;
+  }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: black;
-}
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(238deg, #333399, #ff6699, #006699);
-  background-size: 600% 600%;
+  @extend .gradient-animation-values-shape;
 
-  -webkit-animation: AnimationName 12s ease infinite;
-  -moz-animation: AnimationName 12s ease infinite;
-  animation: AnimationName 12s ease infinite;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 35%;
-  }
-  50% {
-    background-position: 100% 66%;
-  }
-  100% {
-    background-position: 0% 35%;
-  }
-}
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 35%;
-  }
-  50% {
-    background-position: 100% 66%;
-  }
-  100% {
-    background-position: 0% 35%;
-  }
-}
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 35%;
-  }
-  50% {
-    background-position: 100% 66%;
-  }
-  100% {
-    background-position: 0% 35%;
+  &:hover {
+    background: #555;
   }
 }
 </style>
+
