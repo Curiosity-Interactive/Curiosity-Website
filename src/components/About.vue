@@ -1,12 +1,12 @@
 <template>
   <section>
-    
     <h2>
       Curiosity offre des services de production d’expériences
       multi-sensorielles interactives alliant technologies et créations
       multimédias pour des fins de marketing, de design architectural et de
       visibilité numérique dans l’espace publique.
     </h2>
+    <a href="#projects"><i class="fas fa-angle-down arrow"></i></a>
   </section>
 </template>
 

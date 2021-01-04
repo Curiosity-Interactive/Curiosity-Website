@@ -17,11 +17,11 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: "projets", url: "#" },
-        { id: 2, name: "à propos", url: "#" },
-        { id: 3, name: "curiosity lab", url: "#" },
-        { id: 4, name: "contact", url: "#" },
-        { id: 5, name: "english", url: "#" },
+        { id: 1, name: "projets", url: "#projects" },
+        { id: 2, name: "à propos", url: "#about" },
+        { id: 3, name: "curiosity lab", url: "#curiositylab" },
+        { id: 4, name: "contact", url: "#contact" },
+        { id: 5, name: "english", url: "#english" }
       ],
     };
   },

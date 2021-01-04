@@ -4,7 +4,7 @@
     <div class="video-container">
       <video autoplay loop muted :src="headerVideo" type="video/mp4"></video>
     </div>
-    <a href="#mission"><i class="fas fa-angle-down"></i></a>
+    <a href="#about"><i class="fas fa-angle-down arrow"></i></a>
   </header>
 </template>
 
@@ -50,17 +50,6 @@ header img {
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
-}
-
-i {
-  cursor: pointer;
-  position: absolute;
-  left: 50%;
-  bottom: 3%;
-  z-index: 2;
-  font-size: 2rem;
-  @extend .gradient-animation-values-text;
-  @include animation("bgposition 12s infinite");
 }
 
 @media (max-width: 766px) {

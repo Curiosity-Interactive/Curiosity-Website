@@ -13,6 +13,7 @@
       <h2>{{ projectsItem.projectName }}</h2>
       <i class="far fa-eye"></i>
     </div>
+    <a href="#contact"><i class="fas fa-angle-down arrow"></i></a>
   </section>
 </template>
 
@@ -55,6 +56,8 @@ section {
     height: auto;
     transform: translate(-50%, -50%);
   }
+
+  
 
   .info {
     position: absolute;

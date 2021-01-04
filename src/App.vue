@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <Menu/>
-    <Header />
-    <About/>
-    <Projects/>
-    <Contact />
+    <Header id="header"/>
+    <About id="about"/>
+    <Projects id="projects"/>
+    <Contact id="contact"/>
   </div>
 </template>
 
