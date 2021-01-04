@@ -26,7 +26,7 @@ export default {
     return {
       projectsItems: [
         { id: 1, videoUrl: video, projectName: "pensées enfouies" },
-      ]
+      ],
     };
   },
 };
@@ -57,8 +57,6 @@ section {
     transform: translate(-50%, -50%);
   }
 
-  
-
   .info {
     position: absolute;
     h2 {
@@ -75,8 +73,4 @@ section {
     font-size: 2.5rem;
   }
 }
-
-@media (min-width: 767px) and (max-width: 1024px) {
-}
-</style>>
-
+</style>
