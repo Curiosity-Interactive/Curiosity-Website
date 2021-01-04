@@ -2,7 +2,8 @@
   <div id="app">
     <Menu/>
     <Header />
-    <Mission id="mission"/>
+    <About/>
+    <Projects/>
     <Contact />
   </div>
 </template>
@@ -10,7 +11,8 @@
 <script>
 import Menu from "./components/Menu.vue";
 import Header from "./components/Header.vue";
-import Mission from "./components/Mission.vue";
+import About from "./components/About.vue";
+import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
 
 export default {
@@ -21,7 +23,8 @@ export default {
   components: {
     Menu,
     Header,
-    Mission,
+    About,
+    Projects,
     Contact
   },
   methods: {},

@@ -18,7 +18,7 @@ export default {
     return {
       items: [
         { id: 1, name: "projets", url: "#" },
-        { id: 2, name: "mission", url: "#" },
+        { id: 2, name: "à propos", url: "#" },
         { id: 3, name: "curiosity lab", url: "#" },
         { id: 4, name: "contact", url: "#" },
         { id: 5, name: "english", url: "#" },
@@ -100,7 +100,7 @@ label {
 
   ul {
     z-index: 200;
-    line-height: 3rem;
+    line-height: 4rem;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -137,7 +137,13 @@ label {
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media (max-width: 766px) {
+    ul a {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (min-width: 767px) and (max-width: 1024px) {
     ul a {
       font-size: 3rem;
     }

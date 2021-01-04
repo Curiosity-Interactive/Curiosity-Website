@@ -1,5 +1,6 @@
 <template>
   <section>
+  
     <div class="video-container">
       <video autoplay loop muted :src="contactVideo" type="video/mp4"></video>
     </div>
@@ -7,7 +8,7 @@
       <h2>
         Vous avez un projet ? <br />
         Vous avez des idées ? <br />
-        Vous souhaitez en discuter ?
+        Vous êtes curieux d'en savoir plus ?
       </h2>
       <a class="courriel" :href="email">hello@curiosityinteractive.com</a>
       <div class="socialMedia">
@@ -27,7 +28,7 @@ export default {
   data() {
     return {
       contactVideo: video,
-      email: "mailto:name@hello@curiosityinteractive.com"
+      email: "mailto:name@hello@curiosityinteractive.com",
     };
   },
 };
@@ -42,6 +43,15 @@ section {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  h1 {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    @include lachata(1.5rem);
+    @extend .gradient-animation-values-text;
+    @include animation("bgposition 10s infinite");
+  }
 
   .video-container video {
     position: absolute;
@@ -85,7 +95,24 @@ section {
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media (max-width: 766px) {
+    .container {
+      h2 {
+        font-size: 1.5em;
+      }
+
+      .courriel {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (min-width: 767px) and (max-width: 1024px) {
+    .container {
+      h2 {
+        font-size: 2em;
+      }
+    }
   }
 }
 </style>>

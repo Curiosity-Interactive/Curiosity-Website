@@ -62,5 +62,17 @@ i {
   @extend .gradient-animation-values-text;
   @include animation("bgposition 12s infinite");
 }
+
+@media (max-width: 766px) {
+  header img {
+    width: 60%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  header img {
+    width: 60%;
+  }
+}
 </style>>
 
