@@ -59,6 +59,7 @@
     background-size: 600% 600%;
 }
 
+
 //FONTS
 @mixin nexafont($fontsize) {
     font-family: "Nexa", Helvetica, Arial;
@@ -69,6 +70,16 @@
     font-family: "Lachata", Helvetica, sans-serif;
     font-size: $fontsize;
 }
+
+$fontsizeTitlePC : 3.5rem;
+$fontsizeTextPC : 2.5rem;
+
+$fontsizeTitleIpad : 3rem;
+$fontsizeTextIpad : 2rem;
+
+$fontsizeTitlePhone : 2.5rem;
+$fontsizeTextPhone : 1.5rem;
+
 
 //COLORS
 $dark-color: black;

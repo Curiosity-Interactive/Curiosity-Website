@@ -44,7 +44,7 @@ section {
   background: $dark-color;
   color: $light-color;
   text-align: center;
-  @include nexafont(3.5rem);
+  @include nexafont($fontsizeTitlePC);
 
   .video-container {
     position: absolute;
@@ -63,7 +63,7 @@ section {
       text-transform: capitalize;
     }
     i {
-      font-size: 3rem;
+      font-size: $fontsizeTextPC;
     }
   }
 }

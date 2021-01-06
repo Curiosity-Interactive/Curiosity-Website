@@ -48,7 +48,7 @@ section {
     position: absolute;
     top: 20px;
     left: 25px;
-    @include lachata(1.5rem);
+    @include lachata($fontsizeTitlePC);
     @extend .gradient-animation-values-text;
     @include animation("bgposition 10s infinite");
   }
@@ -71,14 +71,14 @@ section {
 
     h2 {
       line-height: 4rem;
-      font-size: 2.5rem;
+      font-size: $fontsizeTextPC;
       color: $light-color;
     }
 
     a {
-      margin-top: 50px;
+      margin: 50px 0 25px 0;
       display: inline-block;
-      font-size: 2rem;
+      font-size: $fontsizeTextPC;
       text-decoration: none;
       padding: 0 20px;
       color: $light-color;
@@ -92,17 +92,25 @@ section {
     .socialMedia {
       @extend .gradient-animation-values-text;
       @include animation("bgposition 12s infinite");
+
+      i {
+        font-size: $fontsizeTextPC;
+      }
     }
   }
 
   @media (max-width: 766px) {
     .container {
       h2 {
-        font-size: 1.5em;
+        font-size: $fontsizeTextPhone;
       }
 
       .courriel {
-        font-size: 1rem;
+        font-size: $fontsizeTextPhone;
+      }
+
+      .socialMedia i {
+        font-size: $fontsizeTextPhone;
       }
     }
   }
@@ -110,7 +118,11 @@ section {
   @media (min-width: 767px) and (max-width: 1024px) {
     .container {
       h2 {
-        font-size: 2em;
+        font-size: $fontsizeTextIpad;
+      }
+
+      .socialMedia i {
+        font-size: $fontsizeTextIpad;
       }
     }
   }
