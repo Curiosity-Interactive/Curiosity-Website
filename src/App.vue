@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <Menu/>
-    <Header id="header"/>
-    <About id="about"/>
-    <Projects id="projects"/>
-    <Contact id="contact"/>
+    <Menu />
+    <Header id="header" />
+    <About id="about" />
+    <Projects id="projects" />
+    <Contact id="contact" />
   </div>
 </template>
 
@@ -25,14 +25,13 @@ export default {
     Header,
     About,
     Projects,
-    Contact
+    Contact,
   },
   methods: {},
 };
 </script>
 
 <style lang="scss">
-
 * {
   box-sizing: border-box;
   margin: 0;

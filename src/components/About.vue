@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>
+    <h2 data-aos="fade-up">
       Curiosity offre des services de production d’expériences
       multi-sensorielles interactives alliant technologies et créations
       multimédias pour des fins de marketing, de design architectural et de

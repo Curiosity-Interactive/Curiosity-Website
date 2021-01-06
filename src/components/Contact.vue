@@ -4,13 +4,13 @@
     <div class="video-container">
       <video autoplay loop muted :src="contactVideo" type="video/mp4"></video>
     </div>
-    <div class="container">
+    <div data-aos="fade-up" class="container">
       <h2>
         Vous avez un projet ? <br />
         Vous avez des idées ? <br />
         Vous êtes curieux d'en savoir plus ?
       </h2>
-      <a class="courriel" :href="email">hello@curiosityinteractive.com</a>
+      <a data-aos="flip-up" class="courriel" :href="email">hello@curiosityinteractive.com</a>
       <div class="socialMedia">
         <a href=""><i class="fab fa-facebook"></i></a>
         <a href=""><i class="fab fa-vimeo-v"></i></a>

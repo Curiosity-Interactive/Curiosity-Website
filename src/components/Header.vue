@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img :src="companyLogo" alt="Curiosity Interactive" />
+    <img data-aos="fade-up" :src="companyLogo" alt="Curiosity Interactive" />
     <div class="video-container">
       <video autoplay loop muted :src="headerVideo" type="video/mp4"></video>
     </div>

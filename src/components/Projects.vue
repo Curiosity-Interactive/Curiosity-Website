@@ -9,7 +9,7 @@
         type="video/mp4"
       ></video>
     </div>
-    <div class="info">
+    <div data-aos="fade-up" class="info">
       <h2>{{ projectsItem.projectName }}</h2>
       <i class="far fa-eye"></i>
     </div>
