@@ -6,7 +6,7 @@
       multimédias pour des fins de marketing, de design architectural et de
       visibilité numérique dans l’espace publique.
     </h2>
-    <a href="#projects"><i class="fas fa-angle-down arrow"></i></a>
+    <a href="#" v-scroll-to="'#projects'"><i class="fas fa-angle-down arrow"></i></a>
   </section>
 </template>
 

@@ -13,7 +13,7 @@
       <h2>{{ projectsItem.projectName }}</h2>
       <i class="far fa-eye"></i>
     </div>
-    <a href="#contact"><i class="fas fa-angle-down arrow"></i></a>
+    <a href="#" v-scroll-to="'#contact'"><i class="fas fa-angle-down arrow"></i></a>
   </section>
 </template>
 

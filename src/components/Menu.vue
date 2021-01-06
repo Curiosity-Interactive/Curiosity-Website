@@ -5,7 +5,7 @@
       <span class="hamburger"></span>
     </span>
     <ul>
-      <li v-for="(item, index) in items" v-bind:key="item">
+      <li v-for="(item, index) in items" v-bind:key="item" >
         <a :class="{ active: index == 0 }" :href="item.url">{{ item.name }}</a>
       </li>
     </ul>

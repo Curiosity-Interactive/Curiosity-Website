@@ -4,7 +4,7 @@
     <div class="video-container">
       <video autoplay loop muted :src="headerVideo" type="video/mp4"></video>
     </div>
-    <a href="#about"><i class="fas fa-angle-down arrow"></i></a>
+    <a href="#" v-scroll-to="'#about'"><i class="fas fa-angle-down arrow"></i></a>
   </header>
 </template>
 
