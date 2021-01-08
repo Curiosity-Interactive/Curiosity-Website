@@ -1,16 +1,17 @@
 <template>
   <section>
-  
     <div class="video-container">
       <video autoplay loop muted :src="contactVideo" type="video/mp4"></video>
     </div>
-    <div data-aos="fade-up" class="container">
+    <div data-aos="fade-up" data-aos-delay="200" class="container">
       <h2>
         Vous avez un projet ? <br />
         Vous avez des idées ? <br />
         Vous êtes curieux d'en savoir plus ?
       </h2>
-      <a data-aos="flip-up" class="courriel" :href="email">hello@curiosityinteractive.com</a>
+      <a data-aos="flip-up" data-aos-delay="400" class="courriel" :href="email"
+        >hello@curiosityinteractive.com</a
+      >
       <div class="socialMedia">
         <a href=""><i class="fab fa-facebook"></i></a>
         <a href=""><i class="fab fa-vimeo-v"></i></a>
@@ -44,15 +45,6 @@ section {
   justify-content: center;
   overflow: hidden;
 
-  h1 {
-    position: absolute;
-    top: 20px;
-    left: 25px;
-    @include lachata($fontsizeTitlePC);
-    @extend .gradient-animation-values-text;
-    @include animation("bgposition 10s infinite");
-  }
-
   .video-container video {
     position: absolute;
     top: 50%;
@@ -62,7 +54,6 @@ section {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    z-index: -1;
   }
 
   .container {
@@ -76,7 +67,7 @@ section {
     }
 
     a {
-      margin: 50px 0 25px 0;
+      margin: 50px 0 0 0;
       display: inline-block;
       font-size: $fontsizeTextPC;
       text-decoration: none;

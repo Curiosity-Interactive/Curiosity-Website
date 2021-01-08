@@ -1,6 +1,6 @@
 <template>
   <section v-for="projectsItem in projectsItems" v-bind:key="projectsItem">
-    <div class="videoContainer">
+    <div class="video-container">
       <video
         autoplay
         loop
@@ -9,11 +9,13 @@
         type="video/mp4"
       ></video>
     </div>
-    <div data-aos="fade-up" class="info">
+    <div data-aos="fade-up" data-aos-delay="200" class="info">
       <h2>{{ projectsItem.projectName }}</h2>
       <i class="far fa-eye"></i>
     </div>
-    <a href="#" v-scroll-to="'#contact'"><i class="fas fa-angle-down arrow"></i></a>
+    <a href="#" v-scroll-to="'#contact'"
+      ><i class="fas fa-angle-down arrow"></i
+    ></a>
   </section>
 </template>
 
@@ -63,6 +65,7 @@ section {
       text-transform: capitalize;
     }
     i {
+      cursor: pointer;
       font-size: $fontsizeTextPC;
     }
   }

@@ -59,7 +59,6 @@
     background-size: 600% 600%;
 }
 
-
 //FONTS
 @mixin nexafont($fontsize) {
     font-family: "Nexa", Helvetica, Arial;
@@ -71,21 +70,21 @@
     font-size: $fontsize;
 }
 
-$fontsizeTitlePC : 3.5rem;
-$fontsizeTextPC : 2.5rem;
+$fontsizeTitlePC: 3.5rem;
+$fontsizeTextPC: 2.5rem;
 
-$fontsizeTitleIpad : 3rem;
-$fontsizeTextIpad : 2rem;
+$fontsizeTitleIpad: 3rem;
+$fontsizeTextIpad: 2rem;
 
-$fontsizeTitlePhone : 2.5rem;
-$fontsizeTextPhone : 1.5rem;
-
+$fontsizeTitlePhone: 2.5rem;
+$fontsizeTextPhone: 1.5rem;
 
 //COLORS
 $dark-color: black;
 $light-color: white;
 
 //ARROW
+
 .arrow {
     cursor: pointer;
     position: absolute;
@@ -95,5 +94,5 @@ $light-color: white;
     font-size: 2rem;
     @extend .gradient-animation-values-text;
     @include animation("bgposition 12s, bounce 2s infinite");
-    
+    transition: transform 0.8s ease-in-out;
 }

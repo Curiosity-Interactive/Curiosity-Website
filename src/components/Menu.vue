@@ -5,11 +5,14 @@
       <span class="hamburger"></span>
     </span>
     <ul>
-      <li v-for="(item, index) in items" v-bind:key="item" >
-        <a :class="{ active: index == 0 }" :href="item.url">{{ item.name }}</a>
+      <li v-for="(item, index) in items" v-bind:key="item">
+        <a :class="{ language: index == 0 }" :href="item.url">{{ item.name }}</a>
       </li>
     </ul>
   </label>
+  <div class="parent">
+    <span class="active-menu">projets</span>
+  </div>
 </template>
 
 <script>
@@ -21,7 +24,7 @@ export default {
         { name: "projets", url: "#projects" },
         { name: "à propos", url: "#about" },
         { name: "curiosity lab", url: "#curiositylab" },
-        { name: "contact", url: "#contact" }
+        { name: "contact", url: "#contact" },
       ],
     };
   },
@@ -29,6 +32,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.parent {
+  position: relative;
+
+  .active-menu {
+    position: fixed;
+    color: $light-color;
+    right: 33px;
+    top: 55px;
+    z-index: 3;
+    transform: rotate(270deg);
+    white-space: nowrap;
+    text-align: left;
+    transform-origin: right;
+    text-transform: uppercase;
+    @extend .gradient-animation-values-text;
+    @include animation("bgposition 10s infinite");
+  }
+}
+
 label {
   .menu {
     position: fixed;
@@ -131,7 +153,7 @@ label {
       @extend .gradient-animation-values-text;
       @include animation("bgposition 12s infinite");
     }
-    .active {
+    .language {
       font-size: 1rem;
       padding-bottom: 10px;
     }
