@@ -6,7 +6,5 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 AOS.init();
 
-var VueScrollTo = require('vue-scrollto')
-
-createApp(App).use(router,VueScrollTo).mount("#app")
+createApp(App).use(router).mount("#app")
 

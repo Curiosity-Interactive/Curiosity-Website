@@ -1,14 +1,12 @@
 <template>
-  <section>
+  <section id="about">
     <h2 data-aos="fade-up" data-aos-delay="200">
       <span>Curiosity Interactive</span> offre des services de production
       d’expériences multi-sensorielles interactives alliant technologies et
       créations multimédias pour des fins de marketing, de design architectural
       et de visibilité numérique dans l’espace publique.
     </h2>
-    <a href="#" v-scroll-to="'#project'"
-      ><i class="fas fa-angle-down arrow"></i
-    ></a>
+    <i class="fas fa-angle-down arrow"></i>
   </section>
 </template>
 

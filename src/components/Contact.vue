@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="contact">
     <div class="video-container">
       <video autoplay loop muted :src="contactVideo" type="video/mp4"></video>
     </div>

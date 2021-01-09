@@ -4,9 +4,12 @@
     <div class="video-container">
       <video autoplay loop muted :src="headerVideo" type="video/mp4"></video>
     </div>
-    <a href="#" v-scroll-to="'#about'"
+
+    <i class="fas fa-angle-down arrow"></i>
+
+    <!-- <a href="#" v-scroll-to="'#about'"
       ><i class="fas fa-angle-down arrow"></i
-    ></a>
+    ></a> -->
   </header>
 </template>
 
@@ -34,6 +37,7 @@ header {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: $dark-color;
 }
 
 header img {

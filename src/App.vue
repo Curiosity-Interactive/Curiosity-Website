@@ -1,12 +1,49 @@
 <template>
   <div id="nav">
     <label>
-      <input type="checkbox" />
+      <input id="checkbox" type="checkbox" />
       <span class="menu">
         <span class="hamburger"></span>
       </span>
       <ul>
-        <li><router-link to="/">Home</router-link></li>
+        <router-link
+          :to="{
+            name: 'home',
+          }"
+          ><li class="language">english</li></router-link
+        >
+        <router-link
+          @click="goHome"
+          :to="{
+            name: 'home',
+            hash: '#about',
+          }"
+          ><li>à propos</li></router-link
+        >
+        <router-link
+          @click="goHome"
+          :to="{
+            name: 'home',
+            hash: '#project',
+          }"
+          ><li>projet</li></router-link
+        >
+        <router-link
+          @click="goHome"
+          :to="{
+            name: 'home',
+            hash: '#curiosity-lab',
+          }"
+          ><li>curiosity lab</li></router-link
+        >
+        <router-link
+          @click="goHome"
+          :to="{
+            name: 'home',
+            hash: '#contact',
+          }"
+          ><li>contact</li></router-link
+        >
       </ul>
     </label>
     <div class="parent">
@@ -18,20 +55,13 @@
 
 <script>
 export default {
-  name: "app",
-  data() {
-    return {
-      items: [
-        { name: "/", url: "#english" },
-        { name: "/projets", url: "#projects" },
-        { name: "/a-propos", url: "#about" },
-        { name: "/curiosity-lab", url: "#curiositylab" },
-        { name: "/contact", url: "#contact" },
-      ],
-    };
+  methods: {
+    goHome() {
+      this.$router.push("/");
+      document.getElementById("checkbox").checked = false;
+
+    },
   },
-  components: {},
-  methods: {},
 };
 </script>
 
