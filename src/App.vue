@@ -46,9 +46,6 @@
         >
       </ul>
     </label>
-    <div class="parent">
-      <span class="active-menu">projets</span>
-    </div>
   </div>
   <router-view />
 </template>
@@ -59,7 +56,6 @@ export default {
     goHome() {
       this.$router.push("/");
       document.getElementById("checkbox").checked = false;
-
     },
   },
 };
@@ -73,8 +69,13 @@ export default {
 }
 
 @font-face {
-  font-family: "Nexa";
-  src: local("Nexa"), url(./font/NexaBook.otf) format("opentype");
+  font-family: "Nexa-book";
+  src: local("Nexa-book"), url(./font/NexaBook.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Nexa-light";
+  src: local("Nexa-light"), url(./font/NexaLight.otf) format("opentype");
 }
 
 @font-face {
@@ -84,14 +85,10 @@ export default {
 
 body {
   overflow-x: hidden;
-  @include nexafont(1rem);
+  @include nexa-light(1rem);
 }
 
-#app {
-  width: 100%;
-  height: 100%;
-  scroll-behavior: smooth;
-}
+
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -145,6 +142,19 @@ label {
     transition: 0.2s ease-in-out;
     cursor: pointer;
   }
+
+  .logo-img {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75px;
+    display: block;
+    z-index: 3;
+
+    path {
+      fill: white;
+    }
+  }
   .hamburger {
     @extend .gradient-animation-values-shape;
     @include animation("bgposition 10s infinite");
@@ -178,7 +188,7 @@ label {
   input {
     display: none;
   }
-  input:checked + .menu {
+  input:checked + .menu{
     box-shadow: 0 0 0 100vw $dark-color, 0 0 0 100vh $dark-color;
     border-radius: 0;
     background: $dark-color;
@@ -239,6 +249,10 @@ label {
       font-size: 1rem;
       padding-bottom: 10px;
     }
+  }
+
+  .router-link-exact-active {
+    color: $light-color;
   }
 
   @media (max-width: 766px) {

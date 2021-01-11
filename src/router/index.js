@@ -10,7 +10,7 @@ const routes = [
     component: Home
   },
   {
-    path: "/project/:projectId",
+    path: "/project/:specProjectId",
     name: "project",
     component: ProjectSpecific
   }

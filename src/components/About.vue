@@ -1,10 +1,13 @@
 <template>
   <section id="about">
+    <h1 class="zoneTitle"><span>à propos</span></h1>
     <h2 data-aos="fade-up" data-aos-delay="200">
-      <span>Curiosity Interactive</span> offre des services de production
-      d’expériences multi-sensorielles interactives alliant technologies et
-      créations multimédias pour des fins de marketing, de design architectural
-      et de visibilité numérique dans l’espace publique.
+      Nous sommes <span>Curiosity Interactive</span>, une compagnie multimédia offrant des
+      services de création et de production pour architectes, agences marketing
+      et ceux qui aiment sortir des sentiers battus. Notre vocation est de
+      développer des nouvelles idées et expériences immersives en utilisant les
+      nouvelles technologies afin de vous émerveiller et faire rêver tous ceux
+      et celles qui croiseront notre chemin.
     </h2>
     <i class="fas fa-angle-down arrow"></i>
   </section>

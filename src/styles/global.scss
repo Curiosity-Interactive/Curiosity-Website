@@ -60,8 +60,13 @@
 }
 
 //FONTS
-@mixin nexafont($fontsize) {
-    font-family: "Nexa", Helvetica, Arial;
+@mixin nexa-light($fontsize) {
+    font-family: "Nexa-light", serif;
+    font-size: $fontsize;
+}
+
+@mixin nexa-book($fontsize) {
+    font-family: "Nexa-book", Helvetica, Arial;
     font-size: $fontsize;
 }
 
@@ -71,10 +76,11 @@
 }
 
 $fontsizeTitlePC: 3.5rem;
-$fontsizeTextPC: 2.5rem;
+$fontsizeTextPC: 2rem;
+$fontsizeDescriptionPC: 2rem;
 
 $fontsizeTitleIpad: 3rem;
-$fontsizeTextIpad: 2rem;
+$fontsizeTextIpad: 1.5rem;
 
 $fontsizeTitlePhone: 2.5rem;
 $fontsizeTextPhone: 1.5rem;
@@ -95,4 +101,41 @@ $light-color: white;
     @extend .gradient-animation-values-text;
     @include animation("bgposition 12s, bounce 2s infinite");
     transition: transform 0.8s ease-in-out;
+}
+
+.zoneTitle {
+    position: absolute;
+    z-index: 3;
+    top: 30px;
+    @include lachata(1rem);
+    text-transform: uppercase;
+    @extend .gradient-animation-values-text;
+    @include animation("bgposition 12s infinite");
+
+    span:before,
+    span:after {
+        content: "";
+        position: absolute;
+        height: 10px;
+        border-bottom: 1px solid white;
+        top: 0;
+        width: 50px;
+        opacity: 0.2;
+    }
+
+    span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+    span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+}
+
+.zoneSubTitle {
+    @include lachata(1rem);
+    text-transform: uppercase;
+    @extend .gradient-animation-values-text;
+    @include animation("bgposition 12s infinite");
 }
