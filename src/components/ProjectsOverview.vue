@@ -14,8 +14,7 @@
         <h2 data-aos="fade-up" data-aos-delay="100">
           {{ projectsItem.projectName }}
         </h2>
-        <div data-aos="fade-up" data-aos-delay="100">
-          <p>Vous êtes curieux?</p>
+        <div data-aos="fade-up" data-aos-delay="200">
           <router-link
             :to="{
               name: 'project',
@@ -31,8 +30,6 @@
                 specProjectImages: projectsItem.projectImages,
               },
             }"
-            data-aos="fade-up"
-            data-aos-delay="50"
             class="far fa-eye eye"
           ></router-link>
         </div>
@@ -119,14 +116,19 @@ section {
         text-transform: capitalize;
       }
       .eye {
+        @extend .gradient-animation-values-shape;
+        @include animation("bgposition 12s infinite");
+        border-radius: 50%;
+        font-size: 3rem;
+
         cursor: pointer;
         color: $light-color;
         text-decoration: none;
-        font-size: $fontsizeTextPC;
+        padding: 15px;
         transition: 0.5s ease-in-out;
 
         &:hover {
-          transform: rotate(180deg);
+          transform: rotate(-180deg);
         }
       }
     }

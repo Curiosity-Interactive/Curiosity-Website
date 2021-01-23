@@ -142,7 +142,7 @@ footer {
     height: auto;
     position: fixed;
     top: 10px;
-    left: 10px;
+    left: 15px;
     z-index: 200;
   }
 }
@@ -213,8 +213,7 @@ label {
       position: absolute;
       display: block;
       width: 20px;
-      height: 100%;
-      
+      height: 100%; 
     }
     &:before {
       top: -10px;
@@ -222,6 +221,7 @@ label {
     &:after {
       bottom: -10px;
     }
+
   }
   input {
     display: none;
@@ -231,6 +231,7 @@ label {
     border-radius: 0;
     background: $dark-color;
     opacity: 1;
+    width: 100%;
 
     .hamburger {
       transform: rotate(45deg);

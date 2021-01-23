@@ -91,48 +91,6 @@ $light-color: white;
 
 //ARROW
 
-.arrow {
-    cursor: pointer;
-    position: absolute;
-    left: 50%;
-    bottom: 3%;
-    z-index: 2;
-    font-size: 2rem;
-    @extend .gradient-animation-values-text;
-    @include animation("bgposition 12s, bounce 2s infinite");
-    transition: transform 0.8s ease-in-out;
-}
-
-.zoneTitle {
-    position: absolute;
-    z-index: 3;
-    top: 30px;
-    @include lachata(1rem);
-    text-transform: uppercase;
-    @extend .gradient-animation-values-text;
-    @include animation("bgposition 12s infinite");
-
-    span:before,
-    span:after {
-        content: "";
-        position: absolute;
-        height: 10px;
-        border-bottom: 1px solid white;
-        top: 0;
-        width: 50px;
-        opacity: 0.2;
-    }
-
-    span:before {
-        right: 100%;
-        margin-right: 15px;
-    }
-    span:after {
-        left: 100%;
-        margin-left: 15px;
-    }
-}
-
 .zoneSubTitle {
     @include lachata(1rem);
     text-transform: uppercase;
