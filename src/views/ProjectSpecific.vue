@@ -4,7 +4,7 @@
       <div class="projectVideo">
         <div style="padding: 56.25% 0 0 0; position: relative">
           <iframe
-            src="https://player.vimeo.com/video/498800064?title=0&byline=0&portrait=0"
+            :src="$route.params.specProjectVimeoUrl"
             style="
               position: absolute;
               top: 0;
@@ -18,34 +18,57 @@
           ></iframe>
         </div>
       </div>
-      <div class="projectDescription">
-        <div class="mainInfo">
+      <div class="project-wrap">
+        <div class="title" data-aos="fade-up" data-aos-delay="100">
           <h1>{{ $route.params.specProjectName }}</h1>
-          <div class="client">
-            <h2 class="">Client</h2>
-            <span class="bold"
-              >2020 - Never Apart <br />Mapp MTL, 5e Édition</span
-            >
+        </div>
+        <div class="columns" data-aos="fade-up" data-aos-delay="200">
+          <div class="left">
+            <div class="block client">
+              <h2>Client</h2>
+              <span
+                >{{ $route.params.specProjectClientName }}<br />{{
+                  $route.params.specProjectClientYear
+                }}</span
+              >
+              <hr />
+            </div>
+            <div class="block team">
+              <h2>Équipe</h2>
+              <span
+                class="teamMember"
+                v-for="member in $route.params.specProjectMembers"
+                :key="member"
+                >{{ member }}</span
+              >
+              <hr />
+            </div>
+            <div class="block technologies">
+              <h2>Technologies</h2>
+              <span
+                v-for="technology in $route.params.specProjectTechnologies"
+                :key="technology"
+                >{{ technology }}</span
+              >
+            </div>
+            <hr />
           </div>
-          <div class="team">
-            <h2>Équipe</h2>
-            <span class="teamMember"
-              ><span>Productrice créative - </span
-              ><span>Camille Renaud</span></span
-            >
-            <span class="teamMember"
-              ><span>Concepteur & poète - </span
-              ><span>Christophe Godon</span></span
-            >
-            <span class="teamMember"
-              ><span>Développeur interactif - </span
-              ><span>Olivier Maurice</span></span
-            >
+          <div class="right">
+            <h2>Description</h2>
+            <div class="description">
+              <p>{{ $route.params.specProjectDescription }}</p>
+            </div>
           </div>
         </div>
-        <div class="description">
-          <p>{{ $route.params.specProjectDescription }}</p>
-        </div>
+      </div>
+      <div class="images">
+        <img
+          data-aos="fade-up"
+          data-aos-delay="100"
+          v-for="image in $route.params.specProjectImages"
+          :key="image"
+          :src="require('../assets/projects/' + image)"
+        />
       </div>
     </div>
   </div>
@@ -56,11 +79,15 @@ export default {
   data() {
     return {};
   },
+  created: function () {
+    window.scrollTo(0, 0);
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 #projectSpecific {
+  margin-top: 50px;
   position: relative;
   width: 100%;
   overflow-x: hidden;
@@ -70,72 +97,130 @@ export default {
   .container {
     margin: 0 auto;
 
-    .projectDescription {
-      width: 80%;
-      height: auto;
-      margin: 100px auto;
+    .images {
       display: flex;
+      flex-flow: wrap;
+      align-items: center;
+      padding: 0 5px;
+      margin-bottom: 7px;
+      overflow: hidden;
+
+      img {
+        max-width: 50%;
+        height: auto;
+        padding: 5px;
+      }
+    }
+
+    .project-wrap {
+      width: 80%;
+      margin: 50px auto;
       line-height: 1.5;
 
-      .mainInfo {
-        width: 50%;
+      h2 {
+        @include nexa-book(1rem);
+        margin: 20px 0;
+      }
+
+      .block {
+        margin-bottom: 30px;
+      }
+
+      .title h1 {
+        width: 100%;
+        @extend .gradient-animation-values-text;
+        @include animation("bgposition 12s infinite");
+        @include nexa-book($fontsizeTextPC);
+      }
+
+      .columns {
+        width: 100%;
         display: flex;
-        flex-direction: column;
+        margin-top: 50px;
 
-        h1 {
-          font-size: $fontsizeTextPC;
-          @extend .gradient-animation-values-text;
-          @include animation("bgposition 12s infinite");
-          @include nexa-book($fontsizeTextPC);
-          margin-bottom: 40px;
+        .right {
+          width: 100%;
+
+          .description {
+            font-size: 1.5rem;
+            line-height: 2;
+          }
         }
 
-        .bold {
-          @include nexa-book(1em);
+        hr {
+          width: 70%;
+          margin: 40px 0 10px 0;
         }
+        .left {
+          width: 100%;
 
-        .team {
-          margin-top: 20px;
-          .teamMember {
-            @include nexa-light(1rem);
-            display: block;
-            padding-bottom: 5px;
-
+          .team {
+            .teamMember {
+              display: block;
+            }
+          }
+          .technologies {
+            width: 80%;
             span {
+              @extend .gradient-animation-values-shape;
+              @include animation("bgposition 12s infinite");
+              color: $light-color;
+              padding: 5px 10px 0px 10px;
+              margin: 0px 15px 10px 0;
               display: inline-block;
             }
           }
         }
       }
+    }
+  }
+}
 
-      p {
-        width: 100%;
-        line-height: 2;
-        font-size: 1.5rem;
+@media (max-width: 1024px) {
+  #projectSpecific {
+    .container {
+      .images {
+        img {
+          max-width: 100%;
+        }
+      }
+      .project-wrap {
+        text-align: center;
+        .columns {
+          display: block;
+
+          hr {
+            width: 100%;
+          }
+
+          .left {
+            .technologies {
+              width: 100%;
+            }
+          }
+          .right {
+            .description {
+              font-size: 1.5rem;
+            }
+          }
+        }
       }
     }
   }
 }
 
-@media (min-width: 767px) and (max-width: 1024px) {
-  p {
-    font-size: 1.25rem !important;
-    line-height: 2 !important;
-  }
-}
-
 @media (max-width: 766px) {
-  .projectDescription {
-    display: block !important;
-    text-align: center;
-
-    .mainInfo {
-      width: 100% !important;
-    }
-
-    .description {
-      margin-top: 40px !important;
-      font-size: $fontsizeTextPhone !important;
+  #projectSpecific {
+    .container {
+      .project-wrap {
+        .columns {
+          .right {
+            .description {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
     }
   }
 }

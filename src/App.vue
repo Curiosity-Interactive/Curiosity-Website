@@ -1,5 +1,6 @@
 <template>
   <div id="nav">
+    <img :src="companyMiniLogo">
     <label>
       <input id="checkbox" type="checkbox" />
       <span class="menu">
@@ -48,10 +49,23 @@
     </label>
   </div>
   <router-view />
+  <footer>
+    <span
+      >Tous droits réservés © Curiosity Interactive - {{ currentYear }}</span
+    >
+  </footer>
 </template>
 
 <script>
+import image from "./assets/curiosity-logo-mini.png";
+
 export default {
+  data() {
+    return {
+      companyMiniLogo: image,
+      currentYear: new Date().getFullYear()
+    };
+  },
   methods: {
     goHome() {
       this.$router.push("/");
@@ -86,9 +100,20 @@ export default {
 body {
   overflow-x: hidden;
   @include nexa-light(1rem);
+  background: $dark-color;
 }
 
+footer {
+  background: $dark-color;
+  color: $light-color;
+  padding: 20px 0;
+  text-align: center;
 
+  span {
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -109,6 +134,17 @@ body {
 ::selection {
   color: rgb(255, 82, 82);
   background: rgb(91, 91, 255);
+}
+
+#nav {
+  img {
+    width: 25px;
+    height: auto;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 200;
+  }
 }
 
 .parent {
@@ -133,12 +169,13 @@ body {
 label {
   .menu {
     position: fixed;
-    right: -100px;
-    top: -100px;
+    left: 0;
+    top: 0;
+    background: black;
     z-index: 100;
-    width: 200px;
-    height: 200px;
-    border-radius: 50% 50% 50% 50%;
+    width: 100%;
+    height: 50px;
+ 
     transition: 0.2s ease-in-out;
     cursor: pointer;
   }
@@ -159,8 +196,8 @@ label {
     @extend .gradient-animation-values-shape;
     @include animation("bgposition 10s infinite");
     position: absolute;
-    top: 135px;
-    left: 50px;
+    top: 23px;
+    right: 15px;
     width: 30px;
     height: 4px;
     display: block;
@@ -175,8 +212,9 @@ label {
       content: "";
       position: absolute;
       display: block;
-      width: 100%;
+      width: 20px;
       height: 100%;
+      
     }
     &:before {
       top: -10px;
@@ -188,20 +226,23 @@ label {
   input {
     display: none;
   }
-  input:checked + .menu{
+  input:checked + .menu {
     box-shadow: 0 0 0 100vw $dark-color, 0 0 0 100vh $dark-color;
     border-radius: 0;
     background: $dark-color;
+    opacity: 1;
 
     .hamburger {
       transform: rotate(45deg);
       &:after {
         transform: rotate(90deg);
+        width: 30px;
         bottom: 0;
       }
 
       &:before {
         transform: rotate(90deg);
+        width: 30px;
         top: 0;
       }
     }
