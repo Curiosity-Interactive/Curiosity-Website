@@ -1,6 +1,8 @@
 <template>
   <header>
+    <!-- Company logo -->
     <img data-aos="fade-up" :src="companyLogo" alt="Curiosity Interactive" />
+    <!-- Video background -->
     <div class="video-container">
       <video autoplay loop muted :src="headerVideo" type="video/mp4"></video>
     </div>
@@ -8,6 +10,7 @@
 </template>
 
 <script>
+//Assets
 import image from "../assets/curiosity-logo.png";
 import video from "../assets/header.mp4";
 
@@ -33,30 +36,23 @@ header {
   overflow: hidden;
   background: $dark-color;
 
+  //Company Logo
   img {
     color: $light-color;
     z-index: 1;
     opacity: 0.8;
     width: 40%;
   }
-  .video-container video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-  }
 }
 
+//Media query - PHONE
 @media (max-width: 766px) {
   header img {
-    width: 60%;
+    width: 70%;
   }
 }
 
+//Media query - IPAD
 @media (min-width: 767px) and (max-width: 1024px) {
   header img {
     width: 60%;

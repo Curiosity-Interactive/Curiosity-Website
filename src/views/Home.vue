@@ -1,5 +1,6 @@
 <template>
   <div classe="home">
+    <!-- Components -->
     <Header />
     <About />
     <ProjectsOverview />
@@ -17,20 +18,13 @@ import Contact from "@/components/Contact.vue";
 
 export default {
   name: "Home",
-  data() {
-    return {};
-  },
   components: {
     Header,
     About,
     ProjectsOverview,
     CuriosityLabOverview,
     Contact
-  },
-  methods: {},
+  }
 };
 </script>
-
-<style lang="scss">
-</style>
 

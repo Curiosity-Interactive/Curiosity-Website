@@ -76,14 +76,14 @@
 }
 
 $fontsizeTitlePC: 3.5rem;
-$fontsizeTextPC: 2rem;
+$fontsizeTextPC: 1.7rem;
 $fontsizeDescriptionPC: 2rem;
 
 $fontsizeTitleIpad: 3rem;
 $fontsizeTextIpad: 1.5rem;
 
 $fontsizeTitlePhone: 2.5rem;
-$fontsizeTextPhone: 1.5rem;
+$fontsizeTextPhone: 1.3rem;
 
 //COLORS
 $dark-color: black;
@@ -97,3 +97,59 @@ $light-color: white;
     @extend .gradient-animation-values-text;
     @include animation("bgposition 12s infinite");
 }
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: $dark-color;
+    color: $light-color;
+    text-align: center;
+}
+
+.eye {
+    @extend .gradient-animation-values-shape;
+    @include animation("bgposition 5s infinite");
+    border-radius: 50%;
+    font-size: 3rem;
+    cursor: pointer;
+    color: $light-color;
+    text-decoration: none;
+    padding: 15px;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+}
+
+//Media query - PHONE
+@media (max-width: 766px) {
+    .eye {
+        font-size: 2rem; 
+        margin-top: 10px;
+    }
+  }
+  
+  //Media query - IPAD
+  @media (min-width: 767px) and (max-width: 1024px) {
+    .eye {
+        font-size: 2.5rem; 
+        margin-top: 10px;
+    }
+  }

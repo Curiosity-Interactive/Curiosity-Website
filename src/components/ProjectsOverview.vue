@@ -1,5 +1,6 @@
 <template>
-  <div id="project">
+  <section id="project">
+    <!-- For loop to display the projects -->
     <section v-for="(projectsItem, index) in projectsItems" :key="index">
       <div class="video-container">
         <video
@@ -11,13 +12,16 @@
         ></video>
       </div>
       <div class="info">
+        <!-- Project Title -->
         <h2 data-aos="fade-up" data-aos-delay="100">
           {{ projectsItem.projectName }}
         </h2>
-        <div data-aos="fade-up" data-aos-delay="200">
+        <!-- Eye -->
+        <div data-aos="flip-up" data-aos-delay="300">
           <router-link
             :to="{
               name: 'project',
+              //Parameters for each project are sent to ProjectSpecific.vue
               params: {
                 specProjectId: projectsItem.projectUrl,
                 specProjectName: projectsItem.projectName,
@@ -35,10 +39,11 @@
         </div>
       </div>
     </section>
-  </div>
+  </section>
 </template>
 
 <script>
+//Assets
 import videoPenseesEnfouiesCover from "../assets/projects/pensees_enfouies/pensees_enfouies-video.mp4";
 
 export default {
@@ -46,6 +51,7 @@ export default {
   data() {
     return {
       projectsItems: [
+        //PENSÉES ENFOUIES
         {
           videoUrl: videoPenseesEnfouiesCover,
           projectUrl: "pensees-enfouies",
@@ -74,6 +80,7 @@ export default {
             "pensees_enfouies/photos/image8.jpg",
           ],
         },
+        //INSERT PROJECT BY COPYING PREVIOUS PROJECT AND CHANGE VALUES
       ],
     };
   },
@@ -81,63 +88,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: $dark-color;
-  color: $light-color;
-  text-align: center;
-  @include nexa-book(2.5rem);
-
-  .video-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-  }
-
+#project {
   .info {
-    position: absolute;
+    h2 {
+      @include nexa-book($fontsizeTitlePC);
+    }
+  }
+}
 
-    div {
-      p {
-        @include nexa-light(1.7rem);
-      }
+//Media query - PHONE
+@media (max-width: 766px) {
+  #project {
+    .info {
       h2 {
-        text-transform: capitalize;
-      }
-      .eye {
-        @extend .gradient-animation-values-shape;
-        @include animation("bgposition 12s infinite");
-        border-radius: 50%;
-        font-size: 3rem;
-
-        cursor: pointer;
-        color: $light-color;
-        text-decoration: none;
-        padding: 15px;
-        transition: 0.5s ease-in-out;
-
-        &:hover {
-          transform: rotate(-180deg);
-        }
+        font-size: $fontsizeTitlePhone;
       }
     }
   }
 }
 
-@media (max-width: 766px) {
-  section {
-    font-size: 2.5rem;
+//Media query - IPAD
+@media (min-width: 767px) and (max-width: 1024px) {
+  #project {
+    .info {
+      h2 {
+        font-size: $fontsizeTitleIpad;
+      }
+    }
   }
 }
 </style>

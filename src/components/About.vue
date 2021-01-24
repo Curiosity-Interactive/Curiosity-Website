@@ -1,9 +1,11 @@
 <template>
   <section id="about">
     <div class="content">
-      <h2 data-aos="fade-up" data-aos-delay="100">
+      <!-- Mission statement -->
+      <h3 data-aos="fade-up" data-aos-delay="100">
         Embellir le quotidien et émerveiller l’oeil baladeur
-      </h2>
+      </h3>
+      <!-- Mission one liner -->
       <p data-aos="fade-up" data-aos-delay="200">
         <span>Curiosity Interactive</span> est un studio de création multimédia
         offrant des services de production d’expériences interactives immersives
@@ -17,62 +19,53 @@
 <script>
 export default {
   name: "About",
-  data() {
-    return {};
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: $dark-color;
-  color: $light-color;
-
+#about {
   .content {
     width: 70%;
     text-align: center;
     margin: 0 auto;
   }
-  h2 {
+
+  //Mission statement
+  h3 {
     @include nexa-book(2.5rem);
-    margin-bottom: 50px;
     @extend .gradient-animation-values-text;
     @include animation("bgposition 12s infinite");
   }
+
+  //Mission one liner
   p {
-    margin: 0 auto;
-    line-height: 3rem;
-    font-size: 1.7rem;
+    margin: 50px auto 0 auto;
+    line-height: 4rem;
+    font-size: $fontsizeTextPC;
   }
 
+  //Media query - PHONE
   @media (max-width: 766px) {
-    
-    h2 {
+    h3 {
       font-size: 1.7rem;
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: $fontsizeTextPhone;
+      line-height: 3rem;
     }
   }
 
+  //Media query - IPAD
   @media (min-width: 767px) and (max-width: 1024px) {
-    
-    h2 {
+    h3 {
       font-size: 2rem;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: $fontsizeTextIpad;
     }
   }
 }
-</style>>
+</style>
 

@@ -1,18 +1,23 @@
 <template>
   <div id="nav">
-    <img :src="companyMiniLogo">
+    <!-- Logo miniature in header -->
+    <img :src="companyMiniLogo" />
+    <!-- Menu -->
     <label>
+      <!-- Hamburger -->
       <input id="checkbox" type="checkbox" />
       <span class="menu">
         <span class="hamburger"></span>
       </span>
       <ul>
+        <!-- Language -->
         <router-link
           :to="{
             name: 'home',
           }"
           ><li class="language">english</li></router-link
         >
+        <!-- Home -->
         <router-link
           @click="goHome"
           :to="{
@@ -21,6 +26,7 @@
           }"
           ><li>à propos</li></router-link
         >
+        <!-- Project -->
         <router-link
           @click="goHome"
           :to="{
@@ -29,6 +35,7 @@
           }"
           ><li>projet</li></router-link
         >
+        <!-- Curiosity Lab -->
         <router-link
           @click="goHome"
           :to="{
@@ -37,6 +44,7 @@
           }"
           ><li>curiosity lab</li></router-link
         >
+        <!-- Contact -->
         <router-link
           @click="goHome"
           :to="{
@@ -48,7 +56,9 @@
       </ul>
     </label>
   </div>
+  <!-- View Home page -->
   <router-view />
+  <!-- Footer -->
   <footer>
     <span
       >Tous droits réservés © Curiosity Interactive - {{ currentYear }}</span
@@ -57,16 +67,19 @@
 </template>
 
 <script>
+//Mini logo
 import image from "./assets/curiosity-logo-mini.png";
 
 export default {
   data() {
     return {
       companyMiniLogo: image,
-      currentYear: new Date().getFullYear()
+      //Get current year for footer
+      currentYear: new Date().getFullYear(),
     };
   },
   methods: {
+    //Close Menu when item clicked
     goHome() {
       this.$router.push("/");
       document.getElementById("checkbox").checked = false;
@@ -82,6 +95,13 @@ export default {
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+  @include nexa-light(1rem);
+  background: $dark-color;
+}
+
+//Fonts
 @font-face {
   font-family: "Nexa-book";
   src: local("Nexa-book"), url(./font/NexaBook.otf) format("opentype");
@@ -97,24 +117,7 @@ export default {
   src: local("Lachata"), url(./font/La-chata-normal.ttf) format("truetype");
 }
 
-body {
-  overflow-x: hidden;
-  @include nexa-light(1rem);
-  background: $dark-color;
-}
-
-footer {
-  background: $dark-color;
-  color: $light-color;
-  padding: 20px 0;
-  text-align: center;
-
-  span {
-    font-size: 1rem;
-    opacity: 0.5;
-  }
-}
-
+//Scroll bar
 ::-webkit-scrollbar {
   width: 10px;
 
@@ -131,12 +134,28 @@ footer {
   }
 }
 
+//Text selection color change
 ::selection {
   color: rgb(255, 82, 82);
   background: rgb(91, 91, 255);
 }
 
+//Footer
+footer {
+  background: $dark-color;
+  color: $light-color;
+  padding: 20px 0;
+  text-align: center;
+
+  span {
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+}
+
+//Menu
 #nav {
+  //Company logo
   img {
     width: 25px;
     height: auto;
@@ -145,167 +164,140 @@ footer {
     left: 15px;
     z-index: 200;
   }
-}
 
-.parent {
-  position: relative;
-
-  .active-menu {
-    position: fixed;
-    color: $light-color;
-    right: 33px;
-    top: 55px;
-    z-index: 3;
-    transform: rotate(270deg);
-    white-space: nowrap;
-    text-align: left;
-    transform-origin: right;
-    text-transform: uppercase;
-    @extend .gradient-animation-values-text;
-    @include animation("bgposition 10s infinite");
-  }
-}
-
-label {
-  .menu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: black;
-    z-index: 100;
-    width: 100%;
-    height: 50px;
- 
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-  }
-
-  .logo-img {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 75px;
-    display: block;
-    z-index: 3;
-
-    path {
-      fill: white;
-    }
-  }
-  .hamburger {
-    @extend .gradient-animation-values-shape;
-    @include animation("bgposition 10s infinite");
-    position: absolute;
-    top: 23px;
-    right: 15px;
-    width: 30px;
-    height: 4px;
-    display: block;
-    transform-origin: center;
-    transition: 0.2s ease-in-out;
-
-    &:after,
-    &:before {
-      @extend .gradient-animation-values-shape;
-      @include animation("bgposition 12s infinite");
+  //Header black
+  label {
+    .menu {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: $dark-color;
+      z-index: 100;
+      width: 100%;
+      height: 50px;
       transition: 0.2s ease-in-out;
-      content: "";
-      position: absolute;
-      display: block;
-      width: 20px;
-      height: 100%; 
-    }
-    &:before {
-      top: -10px;
-    }
-    &:after {
-      bottom: -10px;
+      cursor: pointer;
     }
 
-  }
-  input {
-    display: none;
-  }
-  input:checked + .menu {
-    box-shadow: 0 0 0 100vw $dark-color, 0 0 0 100vh $dark-color;
-    border-radius: 0;
-    background: $dark-color;
-    opacity: 1;
-    width: 100%;
-
+    //Hamburger
     .hamburger {
-      transform: rotate(45deg);
-      &:after {
-        transform: rotate(90deg);
-        width: 30px;
-        bottom: 0;
-      }
-
-      &:before {
-        transform: rotate(90deg);
-        width: 30px;
-        top: 0;
-      }
-    }
-  }
-
-  input:checked + .menu + ul {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  ul {
-    z-index: 200;
-    line-height: 4rem;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: 0.25s 0s ease-in-out;
-    list-style: none;
-    text-align: center;
-    visibility: hidden;
-
-    a {
-      @include lachata($fontsizeTitlePC);
-      margin-bottom: 0.5em;
+      @extend .gradient-animation-values-shape;
+      @include animation("bgposition 10s infinite");
+      position: absolute;
+      top: 23px;
+      right: 15px;
+      width: 30px;
+      height: 4px;
       display: block;
-      color: $light-color;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: bold;
-      user-select: none;
-      opacity: 0.3;
-      transition: opacity 0.5s ease-in-out;
-      transition: transform 0.2s ease-in-out;
+      transform-origin: center;
+      transition: 0.2s ease-in-out;
+
+      &:after,
+      &:before {
+        @extend .gradient-animation-values-shape;
+        @include animation("bgposition 12s infinite");
+        transition: 0.2s ease-in-out;
+        content: "";
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 100%;
+      }
+      &:before {
+        top: -10px;
+      }
+      &:after {
+        bottom: -10px;
+      }
+    }
+    input {
+      display: none;
     }
 
-    a:hover {
+    //Hamburger animation
+    input:checked + .menu {
+      box-shadow: 0 0 0 100vw $dark-color, 0 0 0 100vh $dark-color;
+      border-radius: 0;
+      background: $dark-color;
+      width: 100%;
+
+      .hamburger {
+        transform: rotate(45deg);
+
+        &:after {
+          transform: rotate(90deg);
+          width: 30px;
+          bottom: 0;
+        }
+
+        &:before {
+          transform: rotate(90deg);
+          width: 30px;
+          top: 0;
+        }
+      }
+    }
+
+    //When Hamburger clicked, display menu
+    input:checked + .menu + ul {
       opacity: 1;
-      transform: scale(1.2);
-      @extend .gradient-animation-values-text;
-      @include animation("bgposition 12s infinite");
+      visibility: visible;
     }
-    .language {
-      font-size: 1rem;
-      padding-bottom: 10px;
+
+    ul {
+      z-index: 200;
+      line-height: 4rem;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: 0.25s 0s ease-in-out;
+      list-style: none;
+      text-align: center;
+      visibility: hidden;
+
+      //Links style and animation
+      a {
+        @include lachata($fontsizeTitlePC);
+        margin-bottom: 0.5em;
+        display: block;
+        color: $light-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        user-select: none;
+        opacity: 0.3;
+        transition: opacity 0.5s ease-in-out;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      a:hover {
+        opacity: 1;
+        transform: scale(1.2);
+        @extend .gradient-animation-values-text;
+        @include animation("bgposition 12s infinite");
+      }
+
+      //Specific size for language
+      .language {
+        font-size: 1rem;
+        padding-bottom: 10px;
+      }
     }
   }
 
-  .router-link-exact-active {
-    color: $light-color;
-  }
-
+  //Media query - PHONE
   @media (max-width: 766px) {
-    ul a {
-      font-size: $fontsizeTitlePhone;
+    a {
+      font-size: 2rem !important;
     }
   }
 
+  //Media query - IPAD
   @media (min-width: 767px) and (max-width: 1024px) {
-    ul a {
-      font-size: $fontsizeTitleIpad;
+    a {
+      font-size: 2.5rem !important;
     }
   }
 }
