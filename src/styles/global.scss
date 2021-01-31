@@ -1,4 +1,4 @@
-//ANIMATION
+//Gradient Animation
 @mixin keyframes($animation-name) {
     @-webkit-keyframes #{$animation-name} {
         @content;
@@ -47,7 +47,8 @@
 }
 
 .gradient-animation-values-text {
-    background: linear-gradient(238deg, #333399, #ff6699, #006699);
+
+    background: linear-gradient(238deg, #743ad5, #d53a9d);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -55,11 +56,11 @@
 }
 
 .gradient-animation-values-shape {
-    background: linear-gradient(238deg, #333399, #ff6699, #006699);
+    background: linear-gradient(238deg, #743ad5, #d53a9d);
     background-size: 600% 600%;
 }
 
-//FONTS
+//Fonts
 @mixin nexa-light($fontsize) {
     font-family: "Nexa-light", serif;
     font-size: $fontsize;
@@ -77,27 +78,21 @@
 
 $fontsizeTitlePC: 3.5rem;
 $fontsizeTextPC: 1.7rem;
-$fontsizeDescriptionPC: 2rem;
+$fontsizeDescriptionPC: 1.5rem;
 
 $fontsizeTitleIpad: 3rem;
 $fontsizeTextIpad: 1.5rem;
+$fontsizeDescriptionIpad: 1.3rem;
 
 $fontsizeTitlePhone: 2.5rem;
 $fontsizeTextPhone: 1.3rem;
+$fontsizeDescriptionPhone: 1rem;
 
-//COLORS
+//Colors
 $dark-color: black;
 $light-color: white;
 
-//ARROW
-
-.zoneSubTitle {
-    @include lachata(1rem);
-    text-transform: uppercase;
-    @extend .gradient-animation-values-text;
-    @include animation("bgposition 12s infinite");
-}
-
+//Video Background
 .video-container video {
     position: absolute;
     top: 50%;
@@ -109,6 +104,7 @@ $light-color: white;
     transform: translate(-50%, -50%);
 }
 
+//Main section full page
 section {
     position: relative;
     width: 100%;
@@ -122,6 +118,7 @@ section {
     text-align: center;
 }
 
+//Eye
 .eye {
     @extend .gradient-animation-values-shape;
     @include animation("bgposition 5s infinite");
@@ -138,18 +135,16 @@ section {
     }
 }
 
-//Media query - PHONE
 @media (max-width: 766px) {
     .eye {
-        font-size: 2rem; 
+        font-size: 2rem;
         margin-top: 10px;
     }
-  }
-  
-  //Media query - IPAD
-  @media (min-width: 767px) and (max-width: 1024px) {
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
     .eye {
-        font-size: 2.5rem; 
+        font-size: 2.5rem;
         margin-top: 10px;
     }
-  }
+}

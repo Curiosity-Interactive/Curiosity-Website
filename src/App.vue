@@ -1,7 +1,14 @@
 <template>
   <div id="nav">
     <!-- Logo miniature in header -->
-    <img :src="companyMiniLogo" />
+    <router-link
+      @click="goHome"
+      :to="{
+        name: 'home',
+      }"
+      ><img :src="companyMiniLogo"
+    /></router-link>
+
     <!-- Menu -->
     <label>
       <!-- Hamburger -->
@@ -11,7 +18,7 @@
       </span>
       <ul>
         <!-- Language -->
-        <router-link
+        <router-link 
           :to="{
             name: 'home',
           }"
@@ -31,16 +38,16 @@
           @click="goHome"
           :to="{
             name: 'home',
-            hash: '#project',
+            hash: '#projects',
           }"
-          ><li>projet</li></router-link
+          ><li>projets</li></router-link
         >
         <!-- Curiosity Lab -->
         <router-link
           @click="goHome"
           :to="{
             name: 'home',
-            hash: '#curiosity-lab',
+            hash: '#curiosity-lab-overview',
           }"
           ><li>curiosity lab</li></router-link
         >
@@ -148,7 +155,7 @@ footer {
   text-align: center;
 
   span {
-    font-size: 1rem;
+    font-size: 0.7rem;
     opacity: 0.5;
   }
 }
@@ -163,6 +170,7 @@ footer {
     top: 10px;
     left: 15px;
     z-index: 200;
+    opacity: 0.9;
   }
 
   //Header black
@@ -289,6 +297,9 @@ footer {
 
   //Media query - PHONE
   @media (max-width: 766px) {
+    ul {
+      line-height: 3rem !important;
+    }
     a {
       font-size: 2rem !important;
     }
@@ -296,6 +307,9 @@ footer {
 
   //Media query - IPAD
   @media (min-width: 767px) and (max-width: 1024px) {
+    ul {
+      line-height: 3.5rem !important;
+    }
     a {
       font-size: 2.5rem !important;
     }

@@ -10,9 +10,9 @@
         Vous êtes curieux d'en savoir plus ?
       </h3>
       <!-- Email -->
-      <a data-aos="flip-up" data-aos-delay="300" class="courriel" :href="email"
-        >hello@curiosityinteractive.com</a
-      >
+      <div data-aos="flip-up" data-aos-delay="300">
+        <a class="courriel" :href="email">hello@curiosityinteractive.com</a>
+      </div>
       <!-- Social Media -->
       <div class="socialMedia" data-aos="fade-up" data-aos-delay="300">
         <a target="_blank" :href="facebook"><i class="fab fa-facebook"></i></a>
@@ -65,14 +65,17 @@ section {
 
     .courriel {
       padding: 20px 25px 15px 25px;
-      border: solid $light-color 2px;
+      border: solid 2px;
+      border: 2px solid;
+      border-image-slice: 1;
+      border-width: 5px;
+      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, black 50%) right;
-      background-size: 200%;
+      background-size: 201%;
       transition: 0.5s ease-in-out;
 
       &:hover {
         background-position: left;
-        border-color: $dark-color;
       }
     }
 
@@ -96,8 +99,11 @@ section {
 //Media query - PHONE
 @media (max-width: 766px) {
   section .container {
+    width:95%;
     h3 {
       font-size: 1.7rem;
+      width: 70%;
+      margin: 0 auto;
     }
 
     .courriel {

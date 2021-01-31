@@ -14,7 +14,14 @@
       <!-- Title -->
       <h2 data-aos="fade-up" data-aos-delay="200">Curiosity Lab</h2>
       <!-- Eye -->
-      <p data-aos="flip-up" data-aos-delay="300" class="far fa-eye eye"></p>
+      <div data-aos="flip-up" data-aos-delay="300">
+        <router-link
+          :to="{
+            name: 'curiosity-lab',
+          }"
+          class="far fa-eye eye"
+        ></router-link>
+      </div>
     </div>
   </section>
 </template>
@@ -24,7 +31,7 @@
 import video from "../assets/curiosity-lab.mp4";
 
 export default {
-  name: "Curiosity-Lab",
+  name: "CuriosityLabOverview",
   data() {
     return {
       curiosityLabVideo: video,

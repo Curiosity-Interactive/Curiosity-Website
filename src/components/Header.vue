@@ -1,7 +1,7 @@
 <template>
   <header>
     <!-- Company logo -->
-    <img data-aos="fade-up" :src="companyLogo" alt="Curiosity Interactive" />
+    <img data-aos="fade-up" data-aos-delay="500" :src="companyLogo" alt="Curiosity Interactive" />
     <!-- Video background -->
     <div class="video-container">
       <video autoplay loop muted :src="headerVideo" type="video/mp4"></video>
@@ -35,6 +35,7 @@ header {
   justify-content: center;
   overflow: hidden;
   background: $dark-color;
+  margin-top: 50px;
 
   //Company Logo
   img {

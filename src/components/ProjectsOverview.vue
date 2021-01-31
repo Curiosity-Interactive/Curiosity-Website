@@ -1,5 +1,5 @@
 <template>
-  <section id="project">
+  <section id="projects">
     <!-- For loop to display the projects -->
     <section v-for="(projectsItem, index) in projectsItems" :key="index">
       <div class="video-container">
@@ -20,7 +20,7 @@
         <div data-aos="flip-up" data-aos-delay="300">
           <router-link
             :to="{
-              name: 'project',
+              name: 'projects',
               //Parameters for each project are sent to ProjectSpecific.vue
               params: {
                 specProjectId: projectsItem.projectUrl,
@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#project {
+#projects {
   .info {
     h2 {
       @include nexa-book($fontsizeTitlePC);
@@ -98,7 +98,7 @@ export default {
 
 //Media query - PHONE
 @media (max-width: 766px) {
-  #project {
+  #projects {
     .info {
       h2 {
         font-size: $fontsizeTitlePhone;
@@ -109,7 +109,7 @@ export default {
 
 //Media query - IPAD
 @media (min-width: 767px) and (max-width: 1024px) {
-  #project {
+  #projects {
     .info {
       h2 {
         font-size: $fontsizeTitleIpad;
