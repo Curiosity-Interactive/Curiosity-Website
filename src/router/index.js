@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import ProjectSpecific from '../views/ProjectSpecific.vue'
 import CuriosityLabSpecific from '../views/CuriosityLabSpecific.vue'
+import CuriosityLabProjects from '../views/CuriosityLabProjects.vue'
+
 
 const routes = [
   {
@@ -10,7 +12,7 @@ const routes = [
     component: Home
   },
   {
-    path: "/project/:specProjectId",
+    path: "/projects/:specProjectId",
     name: "projects",
     component: ProjectSpecific,
     props: true
@@ -19,6 +21,12 @@ const routes = [
     path: "/curiosity-lab",
     name: "curiosity-lab",
     component: CuriosityLabSpecific,
+  },
+  {
+    path: "/curiosity-lab/:specProjectId",
+    name: "curiosity-lab-projects",
+    component: CuriosityLabProjects,
+    props: true
   }
 ];
 

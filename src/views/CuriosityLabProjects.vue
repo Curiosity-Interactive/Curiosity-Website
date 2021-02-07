@@ -1,5 +1,5 @@
 <template>
-  <div id="projectSpecific">
+  <div id="curiosityLabProjects">
     <div class="container">
       <!-- Video background vimeo -->
 
@@ -32,22 +32,18 @@
           <div class="left">
             <div class="block client">
               <!-- Project Client Name + Year -->
-              <h2>Client</h2>
-              <span
-                >{{ $route.params.specProjectClientName }}<br />{{
-                  $route.params.specProjectClientYear
-                }}</span
-              >
+              <h2>Année de création</h2>
+              <span>{{ $route.params.specProjectYear }}</span>
               <hr />
             </div>
             <div class="block team">
-              <h2>Équipe</h2>
+              <h2>Créateurs</h2>
               <!-- Project Team Members -->
               <span
                 class="teamMember"
-                v-for="member in $route.params.specProjectMembers"
-                :key="member"
-                >{{ member }}</span
+                v-for="creator in $route.params.specProjectCreators"
+                :key="creator"
+                >{{ creator }}</span
               >
               <hr />
             </div>
@@ -78,13 +74,18 @@
           data-aos-delay="100"
           v-for="image in $route.params.specProjectImages"
           :key="image"
-          :src="require('../assets/projects/' + image)"
+          :src="require('../assets/lab/' + image)"
         />
       </div>
     </div>
     <!-- Back to Top -->
-    <div class="backToTop">
-      <a @click="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <div class="backToLab">
+      <router-link
+        :to="{
+          name: 'curiosity-lab',
+        }"
+        >Curiosity Lab</router-link
+      >
     </div>
   </div>
 </template>
@@ -104,33 +105,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#projectSpecific {
+#curiosityLabProjects {
   margin-top: 50px;
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  color: $dark-color;
-  background: $light-color;
+  color: $light-color;
+  background: $dark-color;
 
   //Back to Top
-  .backToTop {
-    margin: 50px 0;
+  .backToLab {
+    margin: 100px 0;
     text-align: center;
+    cursor: pointer;
 
     a {
       text-decoration: none;
-      cursor: pointer;
+      color: $light-color;
+      padding: 20px 25px 15px 25px;
+      border: solid 2px;
+      border: 2px solid;
+      border-image-slice: 1;
+      border-width: 5px;
+      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+      background: linear-gradient(to left, transparent 50%, white 50%) right;
+      background-size: 201%;
+      transition: 0.5s ease-in-out;
 
-      i {
-        font-size: 2rem;
+      &:hover {
+        background-position: left;
         color: $dark-color;
-        transition: 0.3s ease-in-out;
-        @extend .gradient-animation-values-text;
-        @include animation("bgposition 12s infinite");
-
-        &:hover {
-          transform: scale(1.3);
-        }
       }
     }
   }
@@ -194,7 +198,7 @@ export default {
           width: 70%;
           height: 1px;
           border: 0;
-          border-top: 1px solid rgb(31, 31, 31);
+          border-top: 2px solid rgb(31, 31, 31);
           margin: 40px 0 10px 0;
         }
         .left {
@@ -226,7 +230,7 @@ export default {
 }
 
 @media (max-width: 1024px) {
-  #projectSpecific {
+  #curiosityLabProjects {
     .container {
       .images {
         img {
@@ -262,12 +266,11 @@ export default {
 }
 
 @media (max-width: 766px) {
-  #projectSpecific {
+  #curiosityLabProjects {
     .container {
       .project-wrap {
         .columns {
           .right {
-           
             .description {
               font-size: $fontsizeDescriptionPhone;
             }
@@ -278,4 +281,6 @@ export default {
   }
 }
 </style>>
+
+
 

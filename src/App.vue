@@ -2,7 +2,7 @@
   <div id="nav">
     <!-- Logo miniature in header -->
     <router-link
-      @click="goHome"
+      @click="backToTop"
       :to="{
         name: 'home',
       }"
@@ -18,7 +18,7 @@
       </span>
       <ul>
         <!-- Language -->
-        <router-link 
+        <router-link
           :to="{
             name: 'home',
           }"
@@ -44,10 +44,9 @@
         >
         <!-- Curiosity Lab -->
         <router-link
-          @click="goHome"
+         @click="goLab"
           :to="{
-            name: 'home',
-            hash: '#curiosity-lab-overview',
+            name: 'curiosity-lab',
           }"
           ><li>curiosity lab</li></router-link
         >
@@ -83,6 +82,7 @@ export default {
       companyMiniLogo: image,
       //Get current year for footer
       currentYear: new Date().getFullYear(),
+      isActive: false
     };
   },
   methods: {
@@ -90,6 +90,12 @@ export default {
     goHome() {
       this.$router.push("/");
       document.getElementById("checkbox").checked = false;
+    },
+    goLab() {
+      document.getElementById("checkbox").checked = false;
+    },
+    backToTop() {
+      window.scrollTo(0, 0);
     },
   },
 };
@@ -101,6 +107,10 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+.activeMenu {
+  opacity: 1;
+} 
 
 body {
   overflow-x: hidden;

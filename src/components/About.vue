@@ -75,14 +75,13 @@ export default {
 <style lang="scss" scoped>
 //Mission statement
 #about {
-  background: $light-color;
-  color: $dark-color;
+  background: $dark-color;
+  color: $light-color;
 }
 .statement {
   display: flex;
   flex-direction: column;
-  background: $light-color;
-  color: $dark-color;
+
 
   .container {
     width: 70%;
