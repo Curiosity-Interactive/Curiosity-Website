@@ -18,12 +18,12 @@
       </span>
       <ul>
         <!-- Language -->
-        <router-link
+        <!-- <router-link
           :to="{
             name: 'home',
           }"
           ><li class="language">english</li></router-link
-        >
+        > -->
         <!-- Home -->
         <router-link
           @click="goHome"
@@ -107,10 +107,6 @@ export default {
   margin: 0;
   padding: 0;
 }
-
-.activeMenu {
-  opacity: 1;
-} 
 
 body {
   overflow-x: hidden;
@@ -298,10 +294,10 @@ footer {
       }
 
       //Specific size for language
-      .language {
-        font-size: 1rem;
-        padding-bottom: 10px;
-      }
+      // .language {
+      //   font-size: 1rem;
+      //   padding-bottom: 10px;
+      // }
     }
   }
 

@@ -70,7 +70,7 @@ export default {
           projectUrl: "transition",
           src: "transition/lab_transition.jpg",
           title: "Transition",
-          gridH: "h-3",
+          gridH: "h-5",
           gridV: "v-2",
           description:
             "Première exploration du logiciel Unreal. Création d'un environnement dans les montagnes, textures dynamiques et gestion d'un cycle soleil 24h, en accéléré. Ce paysage d'une nature immaculée nous transporte hors de nos quatre murs en ces temps de pandémie, histoire de nous faire rêver à notre prochain voyage.",
@@ -159,35 +159,35 @@ export default {
           ],
         },
 
-        {
-          projectUrl: "bixi",
-          src: "bixi/lab_bixi.jpg",
-          title: "Bixi",
-          gridH: "h-2",
-          gridV: "v-2",
-          description:
-            "Avril 2018, nous avons pitché sur l'appel d'offre Bixi du Partenariat du Quartier des Spectacles. Dans le cadre de ce projet, nous devions penser à la création d'une oeuvre physique mêlant technologies et mécanique et pouvant résister au climat hivernal. Le pitch a eu lieu durant le Colloque I.A.rt présenté au pavillon des Sciences SH de l'UQAM. Nous sommes arrivés deuxième sur huit groupes retenus.",
-          year: "Avril, 2018",
-          technologies: ["None"],
-          creators: [
-            "Curiosity Interactive",
-            "Frederique Beetz",
-            "Christophe Godon",
-            "Nathanaël Lécaudé",
-            "Chloé Wong",
-            "Aurore Leloup",
-          ],
-          video:
-            "https://player.vimeo.com/video/509308940?title=0&byline=0&portrait=0",
-          projectImages: [
-            "eye/images/image0.jpg",
-            "eye/images/image1.jpg",
-            "eye/images/image2.jpg",
-            "eye/images/image3.jpg",
-            "eye/images/image4.jpg",
-            "eye/images/image5.jpg",
-          ],
-        },
+        // {
+        //   projectUrl: "bixi",
+        //   src: "bixi/lab_bixi.jpg",
+        //   title: "Bixi",
+        //   gridH: "h-2",
+        //   gridV: "v-2",
+        //   description:
+        //     "Avril 2018, nous avons pitché sur l'appel d'offre Bixi du Partenariat du Quartier des Spectacles. Dans le cadre de ce projet, nous devions penser à la création d'une oeuvre physique mêlant technologies et mécanique et pouvant résister au climat hivernal. Le pitch a eu lieu durant le Colloque I.A.rt présenté au pavillon des Sciences SH de l'UQAM. Nous sommes arrivés deuxième sur huit groupes retenus.",
+        //   year: "Avril, 2018",
+        //   technologies: ["None"],
+        //   creators: [
+        //     "Curiosity Interactive",
+        //     "Frederique Beetz",
+        //     "Christophe Godon",
+        //     "Nathanaël Lécaudé",
+        //     "Chloé Wong",
+        //     "Aurore Leloup",
+        //   ],
+        //   video:
+        //     "https://player.vimeo.com/video/509308940?title=0&byline=0&portrait=0",
+        //   projectImages: [
+        //     "eye/images/image0.jpg",
+        //     "eye/images/image1.jpg",
+        //     "eye/images/image2.jpg",
+        //     "eye/images/image3.jpg",
+        //     "eye/images/image4.jpg",
+        //     "eye/images/image5.jpg",
+        //   ],
+        // },
       ],
     };
   },
