@@ -10,7 +10,4 @@ module.exports = {
   configureWebpack: (config) => {
     config.devtool = 'source-map'
   },
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/Curiosity-Website/'
-    : '/'
 };
