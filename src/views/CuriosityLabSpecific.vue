@@ -68,7 +68,7 @@ export default {
         // Transition
         {
           projectUrl: "transition",
-          src: "transition/lab_transition.gif",
+          src: "transition/lab_transition.jpg",
           title: "Transition",
           gridH: "h-5",
           gridV: "v-2",
@@ -91,7 +91,7 @@ export default {
         // Sound-Sensitive
         {
           projectUrl: "sound-sensitive",
-          src: "sound-sensitive/lab_sound-sensitive.gif",
+          src: "sound-sensitive/lab_sound-sensitive.jpg",
           title: "Sound Sensitive",
           gridH: "h-2",
           gridV: "v-2",
@@ -114,7 +114,7 @@ export default {
         // Face cachée de la Lune
         {
           projectUrl: "face-cachee-de-la-lune",
-          src: "eye/lab_eye.gif",
+          src: "eye/lab_eye.jpg",
           title: "Face cachée de la lune",
           gridH: "h-5",
           gridV: "v-2",
@@ -138,7 +138,7 @@ export default {
         //Noise Art
         {
           projectUrl: "noise-art",
-          src: "form-distorsion/lab_form-distorsion.gif",
+          src: "form-distorsion/lab_form-distorsion.jpg",
           title: "Noise Art",
           gridH: "h-3",
           gridV: "v-2",
