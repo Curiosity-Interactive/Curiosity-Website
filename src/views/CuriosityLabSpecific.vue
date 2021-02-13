@@ -75,7 +75,7 @@ export default {
           description:
             "Première exploration du logiciel Unreal. Création d'un environnement dans les montagnes, textures dynamiques et gestion d'un cycle soleil 24h, en accéléré. Ce paysage d'une nature immaculée nous transporte hors de nos quatre murs en ces temps de pandémie, histoire de nous faire rêver à notre prochain voyage.",
           year: "Septembre, 2020",
-          technologies: ["Unreal", "Gaea", "Quixel Mixel", "Megascan"],
+          technologies: ["Unreal", "Gaea", "Quixel Mixer", "Megascan"],
           creators: ["Olivier Maurice"],
           video:
             "https://player.vimeo.com/video/509308940?title=0&byline=0&portrait=0",
@@ -155,7 +155,6 @@ export default {
             "form-distorsion/images/image2.jpg",
             "form-distorsion/images/image3.jpg",
             "form-distorsion/images/image4.jpg",
-            "form-distorsion/images/image5.jpg",
           ],
         },
 

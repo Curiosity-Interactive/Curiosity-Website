@@ -12,7 +12,7 @@
 <script>
 //Assets
 import image from "../assets/curiosity-logo.png";
-import video from "../assets/header.mp4";
+import video from "../assets/home_header.mp4";
 
 export default {
   name: "Header",

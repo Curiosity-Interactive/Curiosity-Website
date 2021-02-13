@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import video from "../assets/about.mp4";
+import video from "../assets/home_about.mp4";
 
 export default {
   name: "About",

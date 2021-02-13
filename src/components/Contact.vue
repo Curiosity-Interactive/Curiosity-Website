@@ -25,7 +25,7 @@
 
 <script>
 //Assets
-import video from "../assets/contact.mp4";
+import video from "../assets/home_contact.mp4";
 
 export default {
   name: "Contact",

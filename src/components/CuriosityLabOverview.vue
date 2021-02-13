@@ -27,7 +27,7 @@
 
 <script>
 //Assets
-import video from "../assets/curiosity-lab.mp4";
+import video from "../assets/home_curiosity-lab.mp4";
 
 export default {
   name: "CuriosityLabOverview",
