@@ -14,13 +14,12 @@
       <!-- Title -->
       <h2 data-aos="fade-up" data-aos-delay="200">Curiosity Lab</h2>
       <!-- Eye -->
-      <div data-aos="flip-up" data-aos-delay="300">
+      <div class="eyeClick" data-aos="flip-up" data-aos-delay="300">
         <router-link
           :to="{
             name: 'curiosity-lab',
           }"
-          class="far fa-eye eye"
-        ></router-link>
+        ><i class="icon-eye-open eye"></i></router-link>
       </div>
     </div>
   </section>
@@ -44,6 +43,10 @@ export default {
 section {
   .container {
     width: auto;
+
+    .eyeClick {
+      margin-top: 20px;
+    }
 
     h2 {
       @include nexa-book($fontsizeTitlePC);

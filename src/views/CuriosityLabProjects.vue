@@ -32,7 +32,7 @@
           <div class="left">
             <div class="block client">
               <!-- Project Client Name + Year -->
-              <h2>Année de création</h2>
+              <h2>Date de création</h2>
               <span>{{ $route.params.specProjectYear }}</span>
               <hr />
             </div>
@@ -122,14 +122,13 @@ export default {
     a {
       text-decoration: none;
       color: $light-color;
-      padding: 20px 25px 15px 25px;
+      padding: 20px 30px 15px 30px;
       border: solid 2px;
-      border: 2px solid;
       border-image-slice: 1;
       border-width: 5px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, white 50%) right;
-      background-size: 201%;
+      background-size: 202%;
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -198,8 +197,9 @@ export default {
           width: 70%;
           height: 1px;
           border: 0;
-          border-top: 2px solid rgb(31, 31, 31);
+          border-top: 2px solid $light-color;
           margin: 40px 0 10px 0;
+          opacity: 0.8;
         }
         .left {
           width: 100%;
@@ -218,8 +218,8 @@ export default {
               @extend .gradient-animation-values-shape;
               @include animation("bgposition 12s infinite");
               color: $light-color;
-              padding: 5px 10px 0px 10px;
-              margin: 0px 15px 10px 0;
+              padding: 5px 10px 5px 10px;
+              margin: 0px 10px 10px 0;
               display: inline-block;
             }
           }

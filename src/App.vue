@@ -44,7 +44,7 @@
         >
         <!-- Curiosity Lab -->
         <router-link
-         @click="goLab"
+          @click="goLab"
           :to="{
             name: 'curiosity-lab',
           }"
@@ -82,7 +82,7 @@ export default {
       companyMiniLogo: image,
       //Get current year for footer
       currentYear: new Date().getFullYear(),
-      isActive: false
+      isActive: false,
     };
   },
   methods: {
@@ -115,6 +115,8 @@ body {
 }
 
 //Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+
 @font-face {
   font-family: "Nexa-book";
   src: local("Nexa-book"), url(./font/NexaBook.otf) format("opentype");
@@ -204,7 +206,7 @@ footer {
       height: 4px;
       display: block;
       transform-origin: center;
-      transition: 0.2s ease-in-out;
+      transition: 0.1s ease-in-out;
 
       &:after,
       &:before {
@@ -260,21 +262,23 @@ footer {
 
     ul {
       z-index: 200;
-      line-height: 4rem;
+      width: 100%;
+      line-height: 5rem;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
-      transition: 0.25s 0s ease-in-out;
+      transition: 0.1s ease-in-out;
       list-style: none;
       text-align: center;
       visibility: hidden;
+      margin-top: 20px;
 
       //Links style and animation
       a {
-        @include lachata($fontsizeTitlePC);
-        margin-bottom: 0.5em;
+        @include lachata(4rem);
+        margin-bottom: 0.2em;
         display: block;
         color: $light-color;
         text-decoration: none;
@@ -302,7 +306,7 @@ footer {
   }
 
   //Media query - PHONE
-  @media (max-width: 766px) {
+  @media (max-width: 429px) {
     ul {
       line-height: 3rem !important;
     }
@@ -311,13 +315,22 @@ footer {
     }
   }
 
-  //Media query - IPAD
-  @media (min-width: 767px) and (max-width: 1024px) {
+  @media (min-width: 430px) and (max-width: 766px) {
     ul {
       line-height: 3.5rem !important;
     }
     a {
       font-size: 2.5rem !important;
+    }
+  }
+
+  //Media query - IPAD
+  @media (min-width: 767px) and (max-width: 1024px) {
+    ul {
+      line-height: 4.5rem !important;
+    }
+    a {
+      font-size: 3.5rem !important;
     }
   }
 }

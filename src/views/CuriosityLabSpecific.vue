@@ -63,12 +63,12 @@ export default {
   components: {},
   data() {
     return {
-      email: "mailto:name@hello@curiosityinteractive.com",
+      email: "mailto:hello@curiosityinteractive.com",
       images: [
         // Transition
         {
           projectUrl: "transition",
-          src: "transition/lab_transition.jpg",
+          src: "transition/lab_transition.gif",
           title: "Transition",
           gridH: "h-5",
           gridV: "v-2",
@@ -91,7 +91,7 @@ export default {
         // Sound-Sensitive
         {
           projectUrl: "sound-sensitive",
-          src: "sound-sensitive/lab_sound-sensitive.jpg",
+          src: "sound-sensitive/lab_sound-sensitive.gif",
           title: "Sound Sensitive",
           gridH: "h-2",
           gridV: "v-2",
@@ -114,7 +114,7 @@ export default {
         // Face cachée de la Lune
         {
           projectUrl: "face-cachee-de-la-lune",
-          src: "eye/lab_eye.jpg",
+          src: "eye/lab_eye.gif",
           title: "Face cachée de la lune",
           gridH: "h-5",
           gridV: "v-2",
@@ -138,7 +138,7 @@ export default {
         //Noise Art
         {
           projectUrl: "noise-art",
-          src: "form-distorsion/lab_form-distorsion.jpg",
+          src: "form-distorsion/lab_form-distorsion.gif",
           title: "Noise Art",
           gridH: "h-3",
           gridV: "v-2",
@@ -213,7 +213,7 @@ export default {
   background: $light-color;
 
   .container {
-    padding: 60px 0;
+    padding: 100px 0;
     width: 70%;
     margin: 0 auto;
     text-align: center;
@@ -239,14 +239,14 @@ export default {
     }
 
     .courriel {
-      padding: 20px 25px 15px 25px;
+      padding: 20px 30px 20px 30px;
       border: solid 2px;
       border: 2px solid;
       border-image-slice: 1;
       border-width: 5px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, black 50%) right;
-      background-size: 201%;
+      background-size: 202%;
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -262,7 +262,7 @@ export default {
     grid-auto-rows: 100px 200px;
     grid-gap: 20px;
     grid-auto-flow: dense;
-    padding: 0 0 50px 0;
+    padding: 0 0 20px 0;
 
     .project-lab {
       .project-item-lab {
@@ -306,7 +306,7 @@ export default {
           pointer-events: none;
           z-index: 4;
           background: $light-color;
-          padding: 20px 0 10px 10px;
+          padding: 20px 0 20px 10px;
           text-align: left;
           transition: 0.5s ease-in-out;
         }
@@ -381,6 +381,7 @@ export default {
 
   @media screen and (max-width: 766px) {
     .container {
+      padding: 50px 0;
       h1 {
         font-size: $fontsizeTitlePhone;
       }

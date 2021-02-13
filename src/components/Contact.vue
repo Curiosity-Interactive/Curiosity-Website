@@ -15,11 +15,9 @@
       </div>
       <!-- Social Media -->
       <div class="socialMedia" data-aos="fade-up" data-aos-delay="300">
-        <a target="_blank" :href="facebook"><i class="fab fa-facebook"></i></a>
-        <a target="_blank" :href="vimeo"><i class="fab fa-vimeo-v"></i></a>
-        <a target="_blank" :href="instagram"
-          ><i class="fab fa-instagram"></i
-        ></a>
+        <a target="_blank" :href="facebook"><i class="icon-facebook"></i></a>
+        <a target="_blank" :href="vimeo"><i class="icon-play-sign"></i></a>
+        <a target="_blank" :href="instagram"><i class="icon-instagram"></i></a>
       </div>
     </div>
   </section>
@@ -34,7 +32,7 @@ export default {
   data() {
     return {
       contactVideo: video,
-      email: "mailto:name@hello@curiosityinteractive.com",
+      email: "mailto:hello@curiosityinteractive.com",
       facebook: "https://www.facebook.com/CuriosityInteractive",
       vimeo: "https://vimeo.com/user130876201",
       instagram: "https://www.instagram.com/curiosityinteractive/?hl=en",
@@ -69,7 +67,8 @@ section {
       border: 2px solid;
       border-image-slice: 1;
       border-width: 5px;
-      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+      border-color: white;
+   
       background: linear-gradient(to left, transparent 50%, black 50%) right;
       background-size: 201%;
       transition: 0.5s ease-in-out;
@@ -82,14 +81,14 @@ section {
     //Social Medias
     .socialMedia {
       a {
-        padding: 0 20px;
+        font-size: 2.5rem;
+        opacity: 0.5;
+        width: 100px;
+        transition: 0.3s ease-in-out;
 
-        i {
-          transition: 0.3s ease-in-out;
-
-          &:hover {
-            transform: scale(1.3);
-          }
+        &:hover {
+          opacity: 1;
+          transform: scale(1.3);
         }
       }
     }
@@ -97,9 +96,29 @@ section {
 }
 
 //Media query - PHONE
-@media (max-width: 766px) {
+@media (max-width: 390px) {
   section .container {
-    width:95%;
+    width: 100%;
+    h3 {
+      font-size: 1.7rem;
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    .courriel {
+      font-size: 1rem;
+    }
+
+    .socialMedia a i {
+      font-size: 2rem;
+    }
+  }
+}
+
+//Media query - PHONE
+@media (min-width: 389px) and (max-width: 766px) {
+  section .container {
+    width: 95%;
     h3 {
       font-size: 1.7rem;
       width: 70%;
@@ -111,7 +130,7 @@ section {
     }
 
     .socialMedia a i {
-      font-size: 1.7rem;
+      font-size: 2rem;
     }
   }
 }
@@ -124,7 +143,7 @@ section {
     }
 
     .socialMedia a i {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
   }
 }

@@ -17,7 +17,7 @@
           {{ projectsItem.projectName }}
         </h2>
         <!-- Eye -->
-        <div data-aos="flip-up" data-aos-delay="300">
+        <div class="eyeClick" data-aos="flip-up" data-aos-delay="300">
           <router-link
             :to="{
               name: 'projects',
@@ -34,7 +34,7 @@
                 specProjectImages: projectsItem.projectImages,
               },
             }"
-            class="far fa-eye eye"
+            ><i class="icon-eye-open eye"></i
           ></router-link>
         </div>
       </div>
@@ -90,6 +90,10 @@ export default {
 <style lang="scss" scoped>
 #projects {
   .info {
+    .eyeClick {
+      margin-top: 20px;
+     
+    }
     h2 {
       @include nexa-book($fontsizeTitlePC);
     }

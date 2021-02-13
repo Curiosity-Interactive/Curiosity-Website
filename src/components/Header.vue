@@ -29,7 +29,7 @@ export default {
 header {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 50px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,6 +50,7 @@ header {
 @media (max-width: 766px) {
   header img {
     width: 70%;
+    margin-top: 0;
   }
 }
 

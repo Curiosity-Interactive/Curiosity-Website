@@ -82,7 +82,6 @@ export default {
   display: flex;
   flex-direction: column;
 
-
   .container {
     width: 70%;
     text-align: center;
@@ -108,7 +107,7 @@ export default {
 .vision {
   background: $dark-color;
   color: $light-color;
-  padding: 100px 0;
+  padding: 15vh 0;
   height: auto;
 
   h1 {
@@ -122,12 +121,13 @@ export default {
     .grid-container {
       width: 100%;
       text-align: center;
+      text-align: left;
 
       .grid-item-left {
         float: left;
         width: 50%;
         clear: both;
-        margin: 20vh 0;
+        margin: 15vh 0;
       }
 
       .grid-item-right {
@@ -156,8 +156,53 @@ export default {
   }
 }
 
+@media (max-width: 390px) {
+  #about {
+    //Mission statement
+    .statement .container {
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        line-height: 2.5rem;
+      }
+    }
+  }
+  .vision {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .container .grid-container {
+      .grid-item-left,
+      .grid-item-right {
+        width: 100%;
+        display: block;
+        p {
+          
+          font-size: 0.9rem;
+
+          span {
+            @include nexa-book(0.9rem);
+          }
+        }
+      }
+
+      .grid-item-left {
+        margin: 5vh 0;
+      }
+
+      .grid-item-right {
+        margin: 0;
+      }
+    }
+  }
+}
+
 //Media query - PHONE
-@media (max-width: 766px) {
+@media (min-width: 391px) and (max-width: 766px) {
   #about {
     //Mission statement
     .statement .container {

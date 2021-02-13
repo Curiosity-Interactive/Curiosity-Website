@@ -82,9 +82,16 @@
         />
       </div>
     </div>
-    <!-- Back to Top -->
-    <div class="backToTop">
-      <a @click="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <!-- Back to Projets -->
+    <div class="backToProjets">
+      <router-link
+        @click="goHomeProjets"
+        :to="{
+          name: 'home',
+          hash: '#projects',
+        }"
+        >Projets</router-link
+      >
     </div>
   </div>
 </template>
@@ -98,6 +105,9 @@ export default {
   methods: {
     backToTop() {
       window.scrollTo(0, 0);
+    },
+    goHomeProjets() {
+      this.$router.push("/");
     },
   },
 };
@@ -113,27 +123,31 @@ export default {
   background: $light-color;
 
   //Back to Top
-  .backToTop {
-    margin: 50px 0;
+  .backToProjets {
+    margin: 100px 0;
     text-align: center;
+    cursor: pointer;
 
     a {
       text-decoration: none;
-      cursor: pointer;
+      color: $dark-color;
+      padding: 20px 40px 15px 40px;
+      border: solid 2px;
+      border: 2px solid;
+      border-image-slice: 1;
+      border-width: 5px;
+      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+      background: linear-gradient(to left, transparent 50%, black 50%) right;
+      background-size: 202%;
+      transition: 0.5s ease-in-out;
 
-      i {
-        font-size: 2rem;
-        color: $dark-color;
-        transition: 0.3s ease-in-out;
-        @extend .gradient-animation-values-text;
-        @include animation("bgposition 12s infinite");
-
-        &:hover {
-          transform: scale(1.3);
-        }
+      &:hover {
+        background-position: left;
+        color: $light-color;
       }
     }
   }
+
   .container {
     margin: 0 auto;
 
@@ -214,8 +228,8 @@ export default {
               @extend .gradient-animation-values-shape;
               @include animation("bgposition 12s infinite");
               color: $light-color;
-              padding: 5px 10px 0px 10px;
-              margin: 0px 15px 10px 0;
+              padding: 5px 10px 5px 10px;
+              margin: 0px 10px 10px 0;
               display: inline-block;
             }
           }
@@ -267,7 +281,6 @@ export default {
       .project-wrap {
         .columns {
           .right {
-           
             .description {
               font-size: $fontsizeDescriptionPhone;
             }
