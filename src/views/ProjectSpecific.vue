@@ -84,7 +84,7 @@
     </div>
     <!-- Back to Projets -->
     <div class="backToProjets">
-      <router-link
+      <router-link data-aos="fade-up" data-aos-delay="100"
         @click="goHomeProjets"
         :to="{
           name: 'home',
@@ -129,6 +129,7 @@ export default {
     cursor: pointer;
 
     a {
+      font-size: $fontsizeDescriptionPC;
       text-decoration: none;
       color: $dark-color;
       padding: 20px 40px 15px 40px;
@@ -241,6 +242,11 @@ export default {
 
 @media (max-width: 1024px) {
   #projectSpecific {
+    .backToProjets {
+      a {
+        font-size: $fontsizeDescriptionIpad;
+      }
+    }
     .container {
       .images {
         img {
@@ -277,6 +283,11 @@ export default {
 
 @media (max-width: 766px) {
   #projectSpecific {
+    .backToProjets {
+      a {
+        font-size: $fontsizeDescriptionPhone;
+      }
+    }
     .container {
       .project-wrap {
         .columns {

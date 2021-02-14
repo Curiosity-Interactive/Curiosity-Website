@@ -121,7 +121,6 @@ export default {
     .grid-container {
       width: 100%;
       text-align: center;
-      text-align: left;
 
       .grid-item-left {
         float: left;
@@ -181,7 +180,6 @@ export default {
         width: 100%;
         display: block;
         p {
-          
           font-size: 0.9rem;
 
           span {
@@ -202,10 +200,11 @@ export default {
 }
 
 //Media query - PHONE
-@media (min-width: 391px) and (max-width: 766px) {
+@media (min-width: 300px) and (max-width: 766px) {
   #about {
     //Mission statement
     .statement .container {
+      width: 90%;
       h3 {
         font-size: 1.7rem;
       }
@@ -221,26 +220,30 @@ export default {
       font-size: $fontsizeTitlePhone;
       margin-bottom: 50px;
     }
-    .container .grid-container {
-      .grid-item-left,
-      .grid-item-right {
-        width: 100%;
-        display: block;
-        p {
-          font-size: $fontsizeDescriptionPhone;
+    .container {
+      width: 90%;
+      .grid-container {
+        .grid-item-left,
+        .grid-item-right {
+          width: 100%;
+          display: block;
+          p {
+            font-size: $fontsizeDescriptionPhone;
+            padding: 25px;
 
-          span {
-            @include nexa-book($fontsizeDescriptionPhone);
+            span {
+              @include nexa-book($fontsizeDescriptionPhone);
+            }
           }
         }
-      }
 
-      .grid-item-left {
-        margin: 5vh 0;
-      }
+        .grid-item-left {
+          margin: 5vh 0;
+        }
 
-      .grid-item-right {
-        margin: 0;
+        .grid-item-right {
+          margin: 0;
+        }
       }
     }
   }

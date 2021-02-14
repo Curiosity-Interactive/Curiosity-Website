@@ -80,7 +80,7 @@
     </div>
     <!-- Back to Top -->
     <div class="backToLab">
-      <router-link
+      <router-link data-aos="fade-up" data-aos-delay="100"
         :to="{
           name: 'curiosity-lab',
         }"
@@ -120,15 +120,16 @@ export default {
     cursor: pointer;
 
     a {
+      font-size: $fontsizeDescriptionPC;
       text-decoration: none;
       color: $light-color;
-      padding: 20px 30px 15px 30px;
+      padding: 20px 40px 15px 40px;
       border: solid 2px;
       border-image-slice: 1;
       border-width: 5px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, white 50%) right;
-      background-size: 202%;
+      background-size: 200%;
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -231,6 +232,12 @@ export default {
 
 @media (max-width: 1024px) {
   #curiosityLabProjects {
+    .backToLab {
+      a {
+        font-size: $fontsizeDescriptionIpad;
+      }
+    }
+
     .container {
       .images {
         img {
@@ -267,6 +274,11 @@ export default {
 
 @media (max-width: 766px) {
   #curiosityLabProjects {
+    .backToLab {
+      a {
+        font-size: $fontsizeDescriptionPhone;
+      }
+    }
     .container {
       .project-wrap {
         .columns {

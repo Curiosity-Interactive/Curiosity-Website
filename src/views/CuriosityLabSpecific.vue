@@ -232,7 +232,7 @@ export default {
     a {
       margin-top: 40px;
       display: inline-block;
-      font-size: $fontsizeTextPC;
+      font-size: $fontsizeDescriptionPC;
       text-decoration: none;
       color: $dark-color;
     }
@@ -359,11 +359,11 @@ export default {
       }
 
       p {
-        font-size: $fontsizeTextIpad;
+        font-size: 1.3rem;
       }
 
       a {
-        font-size: $fontsizeTextIpad;
+        font-size: 1.3rem;
       }
     }
     .container-lab {
@@ -386,11 +386,11 @@ export default {
       }
 
       p {
-        font-size: $fontsizeTextPhone;
+        font-size: 1rem;
       }
 
       a {
-        font-size: $fontsizeTextPhone;
+        font-size: 1rem;
       }
     }
     .container-lab {
