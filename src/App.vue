@@ -151,16 +151,19 @@ body {
 
 //Text selection color change
 ::selection {
-  color: rgb(255, 82, 82);
-  background: rgb(91, 91, 255);
+  color: $light-color;
+  background:$dark-color;
+  -webkit-text-fill-color: $light-color;
+ 
 }
 
 //Footer
 footer {
   background: $dark-color;
   color: $light-color;
-  padding: 20px 0;
+  height: 50px;
   text-align: center;
+  padding-top: 10px;
 
   span {
     font-size: 0.7rem;

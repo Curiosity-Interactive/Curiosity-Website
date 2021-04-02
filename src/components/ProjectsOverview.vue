@@ -90,18 +90,27 @@ export default {
 <style lang="scss" scoped>
 #projects {
   .info {
-    .eyeClick {
-      margin-top: 20px;
-     
-    }
-    h2 {
-      @include nexa-book($fontsizeTitlePC);
+    width: 80%;
+  }
+  .eyeClick {
+    margin-top: 5vh;
+  }
+  h2 {
+    @include nexa-book($fontsizeTitlePC);
+  }
+}
+
+@media (max-width: 390px) {
+  #projects {
+    .info {
+      h2 {
+        font-size: $fontsizeTitleMiniPhone;
+      }
     }
   }
 }
 
-//Media query - PHONE
-@media (max-width: 766px) {
+@media (min-width: 391px) and (max-width: 766px) {
   #projects {
     .info {
       h2 {
@@ -111,8 +120,7 @@ export default {
   }
 }
 
-//Media query - IPAD
-@media (min-width: 767px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1023px) {
   #projects {
     .info {
       h2 {

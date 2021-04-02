@@ -44,11 +44,12 @@ export default {
 <style lang="scss" scoped>
 section {
   .container {
-    width: 70%;
+    width: 80%;
+    text-align: center;
 
     //Title
     h3 {
-      @include nexa-book(2.5rem);
+      @include nexa-book($fontsizeTitlePC);
       color: $light-color;
     }
 
@@ -68,9 +69,9 @@ section {
       border-image-slice: 1;
       border-width: 5px;
       border-color: white;
-   
+
       background: linear-gradient(to left, transparent 50%, black 50%) right;
-      background-size: 201%;
+      background-size: 200%;
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -81,13 +82,15 @@ section {
     //Social Medias
     .socialMedia {
       a {
-        font-size: 2.5rem;
+        font-size: $fontsizeTitlePC;
         opacity: 0.5;
-        width: 100px;
-        transition: 0.3s ease-in-out;
+        margin-left: 50px;
+        margin-right: 50px;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
           opacity: 1;
+          color: $light-color;
           transform: scale(1.3);
         }
       }
@@ -98,52 +101,61 @@ section {
 //Media query - PHONE
 @media (max-width: 390px) {
   section .container {
-    width: 100%;
     h3 {
-      font-size: 1.7rem;
-      width: 70%;
-      margin: 0 auto;
+      font-size: $fontsizeTitleMiniPhone;
+    }
+
+    .socialMedia {
+      a {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
     }
 
     .courriel {
-      font-size: 1rem;
+      width: 100%;
+      font-size: 0.8rem;
     }
 
-    .socialMedia a i {
-      font-size: 2rem;
+    a i {
+      font-size: $fontsizeTitleMiniPhone;
     }
   }
 }
 
 //Media query - PHONE
-@media (min-width: 389px) and (max-width: 766px) {
+@media (min-width: 391px) and (max-width: 766px) {
   section .container {
-    width: 95%;
     h3 {
-      font-size: 1.7rem;
-      width: 70%;
-      margin: 0 auto;
+      font-size: $fontsizeTitlePhone;
+    }
+
+    .socialMedia {
+      a {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
     }
 
     .courriel {
-      font-size: $fontsizeTextPhone;
+      font-size: $fontsizeDescriptionPhone;
     }
 
     .socialMedia a i {
-      font-size: 2rem;
+      font-size: $fontsizeTitlePhone;
     }
   }
 }
 
 //Media query - IPAD
-@media (min-width: 767px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1023px) {
   section .container {
     h3 {
-      font-size: 2rem;
+      font-size: $fontsizeTitleIpad;
     }
 
     .socialMedia a i {
-      font-size: 2.5rem;
+      font-size: $fontsizeTitleIpad;
     }
   }
 }

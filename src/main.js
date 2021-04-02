@@ -7,6 +7,5 @@ import 'aos/dist/aos.css'
 
 AOS.init();
 
-
 createApp(App).use(router).mount("#app")
 

@@ -123,7 +123,7 @@ export default {
       font-size: $fontsizeDescriptionPC;
       text-decoration: none;
       color: $light-color;
-      padding: 20px 40px 15px 40px;
+      padding: 20px 25px 15px 25px;
       border: solid 2px;
       border-image-slice: 1;
       border-width: 5px;
@@ -200,7 +200,7 @@ export default {
           border: 0;
           border-top: 2px solid $light-color;
           margin: 40px 0 10px 0;
-          opacity: 0.8;
+          opacity: 0.4;
         }
         .left {
           width: 100%;
@@ -245,7 +245,6 @@ export default {
         }
       }
       .project-wrap {
-        text-align: center;
         .columns {
           display: block;
 

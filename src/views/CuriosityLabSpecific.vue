@@ -75,7 +75,7 @@ export default {
           description:
             "Première exploration du logiciel Unreal. Création d'un environnement dans les montagnes, textures dynamiques et gestion d'un cycle soleil 24h, en accéléré. Ce paysage d'une nature immaculée nous transporte hors de nos quatre murs en ces temps de pandémie, histoire de nous faire rêver à notre prochain voyage.",
           year: "Septembre, 2020",
-          technologies: ["Unreal", "Gaea", "Quixel Mixer", "Megascan"],
+          technologies: ["Unreal 4", "Gaea", "Quixel Mixer", "Megascan"],
           creators: ["Olivier Maurice"],
           video:
             "https://player.vimeo.com/video/509308940?title=0&byline=0&portrait=0",
@@ -157,36 +157,6 @@ export default {
             "form-distorsion/images/image4.jpg",
           ],
         },
-
-        // {
-        //   projectUrl: "bixi",
-        //   src: "bixi/lab_bixi.jpg",
-        //   title: "Bixi",
-        //   gridH: "h-2",
-        //   gridV: "v-2",
-        //   description:
-        //     "Avril 2018, nous avons pitché sur l'appel d'offre Bixi du Partenariat du Quartier des Spectacles. Dans le cadre de ce projet, nous devions penser à la création d'une oeuvre physique mêlant technologies et mécanique et pouvant résister au climat hivernal. Le pitch a eu lieu durant le Colloque I.A.rt présenté au pavillon des Sciences SH de l'UQAM. Nous sommes arrivés deuxième sur huit groupes retenus.",
-        //   year: "Avril, 2018",
-        //   technologies: ["None"],
-        //   creators: [
-        //     "Curiosity Interactive",
-        //     "Frederique Beetz",
-        //     "Christophe Godon",
-        //     "Nathanaël Lécaudé",
-        //     "Chloé Wong",
-        //     "Aurore Leloup",
-        //   ],
-        //   video:
-        //     "https://player.vimeo.com/video/509308940?title=0&byline=0&portrait=0",
-        //   projectImages: [
-        //     "eye/images/image0.jpg",
-        //     "eye/images/image1.jpg",
-        //     "eye/images/image2.jpg",
-        //     "eye/images/image3.jpg",
-        //     "eye/images/image4.jpg",
-        //     "eye/images/image5.jpg",
-        //   ],
-        // },
       ],
     };
   },
@@ -212,10 +182,10 @@ export default {
   background: $light-color;
 
   .container {
-    padding: 100px 0;
-    width: 70%;
+    padding: 100px 0 150px 0;
+    width: 80%;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 
     h1 {
       @include nexa-book($fontsizeTitlePC);
@@ -224,28 +194,27 @@ export default {
     }
 
     p {
-      margin-top: 35px;
-      line-height: 3rem;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      line-height: 2;
       font-size: $fontsizeTextPC;
     }
 
     a {
-      margin-top: 40px;
       display: inline-block;
-      font-size: $fontsizeDescriptionPC;
+      font-size: $fontsizeTextPC;
       text-decoration: none;
       color: $dark-color;
     }
 
     .courriel {
-      padding: 20px 30px 20px 30px;
-      border: solid 2px;
-      border: 2px solid;
+      padding: 20px 25px 15px 25px;
+      border: solid 5px;
       border-image-slice: 1;
       border-width: 5px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, black 50%) right;
-      background-size: 202%;
+      background-size: 200%;
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -270,7 +239,7 @@ export default {
         position: relative;
 
         &:hover .image img {
-          transform: scale(1.2);
+          transform: scale(1.3);
         }
 
         &:hover .caption {
@@ -359,11 +328,11 @@ export default {
       }
 
       p {
-        font-size: 1.3rem;
+        font-size: $fontsizeTextIpad;
       }
 
       a {
-        font-size: 1.3rem;
+        font-size: $fontsizeTextIpad;
       }
     }
     .container-lab {
@@ -372,6 +341,9 @@ export default {
         .project-item-lab {
           .caption {
             font-size: $fontsizeTextIpad;
+            opacity: 1;
+            width: auto;
+            padding-right: 20px;
           }
         }
       }
@@ -380,17 +352,18 @@ export default {
 
   @media screen and (max-width: 766px) {
     .container {
-      padding: 50px 0;
+      padding: 50px 0 100px 0;
+
       h1 {
         font-size: $fontsizeTitlePhone;
       }
 
       p {
-        font-size: 1rem;
+        font-size: $fontsizeTextPhone;
       }
 
       a {
-        font-size: 1rem;
+        font-size: $fontsizeTextPhone;
       }
     }
     .container-lab {
@@ -424,6 +397,22 @@ export default {
 
       .h-5 {
         grid-row: span 2;
+      }
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .container {
+      h1 {
+        font-size: $fontsizeTitleMiniPhone;
+      }
+
+      p {
+        font-size: $fontsizeTextMiniPhone;
+      }
+
+      a {
+        font-size: $fontsizeTextMiniPhone;
       }
     }
   }

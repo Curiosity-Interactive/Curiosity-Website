@@ -19,7 +19,8 @@
           :to="{
             name: 'curiosity-lab',
           }"
-        ><i class="icon-eye-open eye"></i></router-link>
+          ><i class="icon-eye-open eye"></i
+        ></router-link>
       </div>
     </div>
   </section>
@@ -42,20 +43,28 @@ export default {
 <style lang="scss" scoped>
 section {
   .container {
-    width: auto;
+    width: 80%;
 
     .eyeClick {
-      margin-top: 20px;
+      margin-top: 5vh;
     }
 
     h2 {
       @include nexa-book($fontsizeTitlePC);
-      padding: 15px;
+    
     }
   }
 }
-//Media query - PHONE
-@media (max-width: 766px) {
+
+@media (max-width: 390px) {
+  section .container {
+    h2 {
+      font-size: $fontsizeTitleMiniPhone;
+    }
+  }
+}
+
+@media (min-width: 391px) and (max-width: 766px) {
   section .container {
     h2 {
       font-size: $fontsizeTitlePhone;
@@ -63,8 +72,7 @@ section {
   }
 }
 
-//Media query - IPAD
-@media (min-width: 767px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1023px) {
   section .container {
     h2 {
       font-size: $fontsizeTitleIpad;

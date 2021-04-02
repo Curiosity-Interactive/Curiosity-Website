@@ -24,14 +24,23 @@
       <h1 data-aos="fade-up" data-aos-delay="100">Notre vision</h1>
 
       <div class="grid-container">
-        <div data-aos="fade-up" data-aos-delay="300" class="grid-item-left">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="grid-item-left first-item"
+        >
           <p>
             Inscrit dans notre ADN, travailler en équipe et co-créer nous
             permettent d'explorer l’art numérique et d'innover pour créer des
             œuvres multimédias interactives <span>intuitives et ludiques</span>.
           </p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="grid-item-right">
+        z
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="grid-item-right second-item"
+        >
           <p>
             Chez Curiosity, nous voulons mettre
             <span>l’humain au cœur des processus</span> de création en
@@ -39,15 +48,21 @@
             puissent en profiter.
           </p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="grid-item-left">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="grid-item-left third-item"
+        >
           <p>
-            Nous souhaitons grandir dans l’inclusion en favorisant la
-            collaboration à son meilleur. Nous voulons relever des défis, mais
-            par dessus tout, <span>avoir du plaisir</span> du concept à la
-            livraison.
+            Nous souhaitons grandir dans l’inclusion en
+            <span>favorisant la collaboration</span> du concept à la livraison.
           </p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="grid-item-right">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="grid-item-right fourth-item"
+        >
           <p>
             Notre volonté est de <span>revitaliser les espaces</span> en leur
             donnant un nouveau souffle, aux moyens de l’art et de
@@ -75,30 +90,29 @@ export default {
 <style lang="scss" scoped>
 //Mission statement
 #about {
-  background: $dark-color;
-  color: $light-color;
+  background: $light-color;
+  color: $dark-color;
 }
 .statement {
   display: flex;
   flex-direction: column;
 
   .container {
-    width: 70%;
-    text-align: center;
+    width: 80%;
+    text-align: left;
     margin: 0 auto;
+    height: auto;
   }
 
   h3 {
-    width: 100%;
-    @include nexa-book(2.5rem);
+    @include nexa-book($fontsizeTitlePC);
     @extend .gradient-animation-values-text;
     @include animation("bgposition 12s infinite");
   }
 
   p {
-    width: 100%;
     margin: 50px auto 0 auto;
-    line-height: 4rem;
+    line-height: 2;
     font-size: $fontsizeTextPC;
   }
 }
@@ -113,20 +127,30 @@ export default {
   h1 {
     @include nexa-book($fontsizeTitlePC);
     color: $light-color;
+    text-align: left;
   }
 
   .container {
-    width: 70%;
+    width: 80%;
 
     .grid-container {
       width: 100%;
-      text-align: center;
+      text-align: left;
+
+      .first-item {
+        margin-top: 15vh;
+        margin-bottom: 25vh;
+      }
+
+      .second-item,
+      .third-item {
+        margin-bottom: 25vh;
+      }
 
       .grid-item-left {
         float: left;
         width: 50%;
         clear: both;
-        margin: 15vh 0;
       }
 
       .grid-item-right {
@@ -136,7 +160,7 @@ export default {
       }
 
       p {
-        font-size: $fontsizeDescriptionPC;
+        font-size: $fontsizeTextPC;
         line-height: 2;
         padding: 40px;
         color: $light-color;
@@ -146,7 +170,7 @@ export default {
         border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
 
         span {
-          @include nexa-book($fontsizeDescriptionPC);
+          @include nexa-book($fontsizeTextPC);
           @extend .gradient-animation-values-text;
           @include animation("bgposition 5s infinite");
         }
@@ -158,91 +182,94 @@ export default {
 @media (max-width: 390px) {
   #about {
     //Mission statement
-    .statement .container {
+    .statement {
+      padding: 10vh 0;
+    }
+    .container {
       h3 {
-        font-size: 1.3rem;
+        font-size: $fontsizeTitleMiniPhone;
       }
 
       p {
-        font-size: 0.9rem;
-        line-height: 2.5rem;
+        font-size: $fontsizeTextMiniPhone;
       }
     }
   }
   .vision {
     h1 {
-      font-size: 2rem;
-      margin-bottom: 40px;
+      font-size: $fontsizeTitleMiniPhone;
     }
     .container .grid-container {
+      .first-item {
+        margin-top: 10vh;
+        margin-bottom: 50px;
+      }
+
+      .second-item,
+      .third-item {
+        margin-bottom: 50px;
+      }
       .grid-item-left,
       .grid-item-right {
         width: 100%;
         display: block;
         p {
-          font-size: 0.9rem;
+          font-size: $fontsizeTextMiniPhone;
+          padding: 20px;
 
           span {
-            @include nexa-book(0.9rem);
+            @include nexa-book($fontsizeTextMiniPhone);
           }
         }
-      }
-
-      .grid-item-left {
-        margin: 5vh 0;
-      }
-
-      .grid-item-right {
-        margin: 0;
       }
     }
   }
 }
 
 //Media query - PHONE
-@media (min-width: 300px) and (max-width: 766px) {
+@media (min-width: 391px) and (max-width: 766px) {
   #about {
     //Mission statement
-    .statement .container {
-      width: 90%;
+    .statement {
+      padding: 10vh 0;
+    }
+    .container {
       h3 {
-        font-size: 1.7rem;
+        font-size: $fontsizeTitlePhone;
       }
 
       p {
-        font-size: $fontsizeDescriptionPhone;
-        line-height: 3rem;
+        font-size: $fontsizeTextPhone;
       }
     }
   }
   .vision {
     h1 {
       font-size: $fontsizeTitlePhone;
-      margin-bottom: 50px;
     }
     .container {
-      width: 90%;
       .grid-container {
+        .first-item {
+          margin-top: 10vh;
+          margin-bottom: 10vh;
+        }
+        .second-item,
+        .third-item {
+          margin-bottom: 10vh;
+        }
+
         .grid-item-left,
         .grid-item-right {
           width: 100%;
           display: block;
           p {
-            font-size: $fontsizeDescriptionPhone;
+            font-size: $fontsizeTextPhone;
             padding: 25px;
 
             span {
-              @include nexa-book($fontsizeDescriptionPhone);
+              @include nexa-book($fontsizeTextPhone);
             }
           }
-        }
-
-        .grid-item-left {
-          margin: 5vh 0;
-        }
-
-        .grid-item-right {
-          margin: 0;
         }
       }
     }
@@ -250,29 +277,27 @@ export default {
 }
 
 //Media query - IPAD
-@media (min-width: 767px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1023px) {
   //Mission statement
   #about {
     .statement .container {
       h3 {
-        font-size: 1.7rem;
+        font-size: $fontsizeTitleIpad;
       }
 
       p {
         font-size: $fontsizeTextIpad;
-        line-height: 3rem;
       }
     }
   }
   .vision {
     h1 {
       font-size: $fontsizeTitleIpad;
-      margin-bottom: 30px;
     }
     .container .grid-container {
       .grid-item-left,
       .grid-item-right {
-        width: 100%;
+        width: 70%;
         display: block;
 
         p {
@@ -282,14 +307,6 @@ export default {
             @include nexa-book($fontsizeTextIpad);
           }
         }
-      }
-
-      .grid-item-left {
-        margin: 10vh 0;
-      }
-
-      .grid-item-right {
-        margin: 0;
       }
     }
   }

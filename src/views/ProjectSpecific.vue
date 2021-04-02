@@ -132,7 +132,7 @@ export default {
       font-size: $fontsizeDescriptionPC;
       text-decoration: none;
       color: $dark-color;
-      padding: 20px 40px 15px 40px;
+      padding: 20px 25px 15px 25px;
       border: solid 2px;
       border: 2px solid;
       border-image-slice: 1;
@@ -171,12 +171,12 @@ export default {
     .project-wrap {
       width: 80%;
       margin: 50px auto;
-      line-height: 1.5;
+      line-height: 2;
 
       //Sub-Titles
       h2 {
         @include nexa-book(1rem);
-        margin: 20px 0;
+        margin: px 0;
       }
 
       .block {
@@ -211,6 +211,7 @@ export default {
           border: 0;
           border-top: 1px solid rgb(31, 31, 31);
           margin: 40px 0 10px 0;
+          opacity: 0.4;
         }
         .left {
           width: 100%;
@@ -254,7 +255,6 @@ export default {
         }
       }
       .project-wrap {
-        text-align: center;
         .columns {
           display: block;
 

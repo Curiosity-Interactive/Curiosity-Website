@@ -11,7 +11,7 @@
 
 <script>
 //Assets
-import image from "../assets/curiosity-logo.png";
+import image from "../assets/curiosity-logo_white.png";
 import video from "../assets/home_header.mp4";
 
 export default {
@@ -39,25 +39,27 @@ header {
 
   //Company Logo
   img {
-    color: $light-color;
     z-index: 1;
     opacity: 0.8;
-    width: 40%;
+    width: 600px;
   }
 }
 
-//Media query - PHONE
-@media (max-width: 766px) {
+@media (max-width: 390px) {
   header img {
-    width: 70%;
-    margin-top: 0;
+    width: 250px;
   }
 }
 
-//Media query - IPAD
-@media (min-width: 767px) and (max-width: 1024px) {
+@media (min-width: 391px) and (max-width: 766px) {
   header img {
-    width: 60%;
+    width: 350px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  header img {
+    width: 500px;
   }
 }
 </style>>
