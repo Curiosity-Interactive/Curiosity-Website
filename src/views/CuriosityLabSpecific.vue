@@ -202,7 +202,7 @@ export default {
 
     a {
       display: inline-block;
-      font-size: $fontsizeTextPC;
+      font-size: nexa-book($fontsizeTextPC);
       text-decoration: none;
       color: $dark-color;
     }
@@ -214,7 +214,7 @@ export default {
       border-width: 5px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, black 50%) right;
-      background-size: 200%;
+      background-size: 205%;
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -240,11 +240,6 @@ export default {
 
         &:hover .image img {
           transform: scale(1.3);
-        }
-
-        &:hover .caption {
-          opacity: 1;
-          animation: move-down 0.3s linear;
         }
 
         .image {
@@ -321,7 +316,20 @@ export default {
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (min-width: 1024px) {
+    .container-lab {
+      .project-lab:hover {
+        .project-item-lab {
+          .caption {
+            opacity: 1;
+            animation: move-down 0.3s linear;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
     .container {
       h1 {
         font-size: $fontsizeTitleIpad;
@@ -332,7 +340,7 @@ export default {
       }
 
       a {
-        font-size: $fontsizeTextIpad;
+        font-size: $fontsizeTextPhone;
       }
     }
     .container-lab {

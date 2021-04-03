@@ -80,11 +80,13 @@
     </div>
     <!-- Back to Top -->
     <div class="backToLab">
-      <router-link data-aos="fade-up" data-aos-delay="100"
+      <router-link
+        data-aos="fade-up"
+        data-aos-delay="100"
         :to="{
           name: 'curiosity-lab',
         }"
-        >Curiosity Lab</router-link
+        >&#8592; Curiosity Lab</router-link
       >
     </div>
   </div>
@@ -120,21 +122,22 @@ export default {
     cursor: pointer;
 
     a {
-      font-size: $fontsizeDescriptionPC;
+      font-size: nexa-book($fontsizeDescriptionPC);
       text-decoration: none;
       color: $light-color;
-      padding: 20px 25px 15px 25px;
+      padding: 20px 55px 15px 55px;
       border: solid 2px;
       border-image-slice: 1;
       border-width: 5px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, white 50%) right;
-      background-size: 200%;
+      background-size: 205%;
       transition: 0.5s ease-in-out;
 
       &:hover {
         background-position: left;
         color: $dark-color;
+    
       }
     }
   }
@@ -165,7 +168,7 @@ export default {
       //Sub-Titles
       h2 {
         @include nexa-book(1rem);
-        margin: 20px 0;
+
       }
 
       .block {
@@ -196,11 +199,10 @@ export default {
 
         hr {
           width: 70%;
-          height: 1px;
+          height: 2px;
           border: 0;
-          border-top: 2px solid $light-color;
+          background: linear-gradient(-45deg, #743ad5, #d53a9d, #4400ff);
           margin: 40px 0 10px 0;
-          opacity: 0.4;
         }
         .left {
           width: 100%;
@@ -220,7 +222,7 @@ export default {
               @include animation("bgposition 12s infinite");
               color: $light-color;
               padding: 5px 10px 5px 10px;
-              margin: 0px 10px 10px 0;
+              margin: 5px 10px 5px 0;
               display: inline-block;
             }
           }

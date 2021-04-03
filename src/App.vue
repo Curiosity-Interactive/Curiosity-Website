@@ -178,7 +178,7 @@ footer {
     width: 25px;
     height: auto;
     position: fixed;
-    top: 10px;
+    top: 12px;
     left: 15px;
     z-index: 200;
     opacity: 0.9;
@@ -309,26 +309,26 @@ footer {
   }
 
   //Media query - PHONE
-  @media (max-width: 429px) {
+  @media (max-width: 390px) {
     ul {
-      line-height: 3rem !important;
+      line-height: 2.5rem !important;
     }
     a {
       font-size: 2rem !important;
     }
   }
 
-  @media (min-width: 430px) and (max-width: 766px) {
+  @media (min-width: 391px) and (max-width: 766px) {
     ul {
       line-height: 3.5rem !important;
     }
     a {
-      font-size: 2.5rem !important;
+      font-size: 3rem !important;
     }
   }
 
   //Media query - IPAD
-  @media (min-width: 767px) and (max-width: 1024px) {
+  @media (min-width: 767px) and (max-width: 1023px) {
     ul {
       line-height: 4.5rem !important;
     }

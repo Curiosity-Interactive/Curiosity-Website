@@ -1,9 +1,5 @@
 <template>
   <section id="contact">
-    <!-- Video background -->
-    <div class="video-container">
-      <video autoplay loop muted :src="contactVideo" type="video/mp4"></video>
-    </div>
     <div class="container">
       <!-- One liner -->
       <h3 data-aos="fade-up" data-aos-delay="200">
@@ -24,14 +20,10 @@
 </template>
 
 <script>
-//Assets
-import video from "../assets/home_contact.mp4";
-
 export default {
   name: "Contact",
   data() {
     return {
-      contactVideo: video,
       email: "mailto:hello@curiosityinteractive.com",
       facebook: "https://www.facebook.com/CuriosityInteractive",
       vimeo: "https://vimeo.com/user130876201",
@@ -42,6 +34,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#contact {
+  @extend .gradient-animation-values-shape;
+  @include animation("bgposition 15s infinite");
+}
 section {
   .container {
     width: 80%;
@@ -64,18 +60,19 @@ section {
 
     .courriel {
       padding: 20px 25px 15px 25px;
-      border: solid 2px;
-      border: 2px solid;
+      border: solid 1px;
+      border: 1px solid;
       border-image-slice: 1;
       border-width: 5px;
       border-color: white;
 
-      background: linear-gradient(to left, transparent 50%, black 50%) right;
+      background: linear-gradient(to left, transparent 50%, white 50%) right;
       background-size: 200%;
       transition: 0.5s ease-in-out;
 
       &:hover {
         background-position: left;
+        color: black;
       }
     }
 

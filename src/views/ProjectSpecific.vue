@@ -84,13 +84,15 @@
     </div>
     <!-- Back to Projets -->
     <div class="backToProjets">
-      <router-link data-aos="fade-up" data-aos-delay="100"
+      <router-link
+        data-aos="fade-up"
+        data-aos-delay="100"
         @click="goHomeProjets"
         :to="{
           name: 'home',
           hash: '#projects',
         }"
-        >Projets</router-link
+        >&#8592; Projets</router-link
       >
     </div>
   </div>
@@ -129,17 +131,16 @@ export default {
     cursor: pointer;
 
     a {
-      font-size: $fontsizeDescriptionPC;
+      font-size: nexa-book($fontsizeDescriptionPC);
       text-decoration: none;
       color: $dark-color;
-      padding: 20px 25px 15px 25px;
+      padding: 20px 55px 15px 55px;
       border: solid 2px;
-      border: 2px solid;
       border-image-slice: 1;
       border-width: 5px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       background: linear-gradient(to left, transparent 50%, black 50%) right;
-      background-size: 202%;
+      background-size: 205%;
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -171,12 +172,19 @@ export default {
     .project-wrap {
       width: 80%;
       margin: 50px auto;
-      line-height: 2;
+      line-height: 1.5;
+
+      hr {
+        width: 70%;
+        height: 2px;
+        border: 0;
+        background: linear-gradient(-45deg, #743ad5, #d53a9d, #4400ff);
+        margin: 40px 0 10px 0;
+      }
 
       //Sub-Titles
       h2 {
         @include nexa-book(1rem);
-        margin: px 0;
       }
 
       .block {
@@ -205,14 +213,6 @@ export default {
           }
         }
 
-        hr {
-          width: 70%;
-          height: 1px;
-          border: 0;
-          border-top: 1px solid rgb(31, 31, 31);
-          margin: 40px 0 10px 0;
-          opacity: 0.4;
-        }
         .left {
           width: 100%;
 
@@ -231,7 +231,7 @@ export default {
               @include animation("bgposition 12s infinite");
               color: $light-color;
               padding: 5px 10px 5px 10px;
-              margin: 0px 10px 10px 0;
+              margin: 5px 10px 5px 0;
               display: inline-block;
             }
           }

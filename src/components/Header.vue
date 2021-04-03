@@ -53,7 +53,7 @@ header {
 
 @media (min-width: 391px) and (max-width: 766px) {
   header img {
-    width: 350px;
+    width: 300px;
   }
 }
 
