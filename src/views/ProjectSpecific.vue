@@ -2,7 +2,6 @@
   <div id="projectSpecific">
     <div class="container">
       <!-- Video background vimeo -->
-
       <div class="projectVideo">
         <div style="padding: 56.25% 0 0 0; position: relative">
           <!-- Project Vimeo URL -->
@@ -126,7 +125,7 @@ export default {
 
   //Back to Top
   .backToProjets {
-    margin: 100px 0;
+    margin: 80px 0;
     text-align: center;
     cursor: pointer;
 

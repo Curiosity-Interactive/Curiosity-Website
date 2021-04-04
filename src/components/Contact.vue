@@ -16,6 +16,11 @@
         <a target="_blank" :href="instagram"><i class="icon-instagram"></i></a>
       </div>
     </div>
+    <footer>
+      <span
+        >Tous droits réservés © Curiosity Interactive - {{ currentYear }}</span
+      >
+    </footer>
   </section>
 </template>
 
@@ -24,6 +29,7 @@ export default {
   name: "Contact",
   data() {
     return {
+      currentYear: new Date().getFullYear(),
       email: "mailto:hello@curiosityinteractive.com",
       facebook: "https://www.facebook.com/CuriosityInteractive",
       vimeo: "https://vimeo.com/user130876201",
@@ -81,8 +87,7 @@ section {
       a {
         font-size: $fontsizeTitlePC;
         opacity: 0.5;
-        margin-left: 50px;
-        margin-right: 50px;
+        padding: 0 40px;
         transition: all 0.3s ease-in-out;
 
         &:hover {
@@ -97,25 +102,29 @@ section {
 
 //Media query - PHONE
 @media (max-width: 390px) {
-  section .container {
-    h3 {
-      font-size: $fontsizeTitleMiniPhone;
+  section {
+    footer span {
+      font-size: 0.6rem;
     }
-
-    .socialMedia {
-      a {
-        margin-left: 30px;
-        margin-right: 30px;
+    .container {
+      h3 {
+        font-size: $fontsizeTitleMiniPhone;
       }
-    }
 
-    .courriel {
-      width: 100%;
-      font-size: 0.8rem;
-    }
+      .socialMedia {
+        a {
+          padding: 0 30px;
+        }
+      }
 
-    a i {
-      font-size: $fontsizeTitleMiniPhone;
+      .courriel {
+        width: 100%;
+        font-size: 0.8rem;
+      }
+
+      a i {
+        font-size: $fontsizeTitleMiniPhone;
+      }
     }
   }
 }
@@ -129,8 +138,7 @@ section {
 
     .socialMedia {
       a {
-        margin-left: 30px;
-        margin-right: 30px;
+        padding: 0 30px;
       }
     }
 

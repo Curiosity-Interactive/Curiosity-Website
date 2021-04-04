@@ -117,7 +117,7 @@ export default {
 
   //Back to Top
   .backToLab {
-    margin: 100px 0;
+    margin: 80px 0;
     text-align: center;
     cursor: pointer;
 

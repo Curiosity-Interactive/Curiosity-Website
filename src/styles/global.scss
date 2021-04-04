@@ -58,8 +58,8 @@
 
 .gradient-animation-values-shape {
     background: linear-gradient(-45deg, #743ad5, #d53a9d, #4400ff);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
 //Fonts
@@ -101,6 +101,18 @@ $fontsizeDescriptionMiniPhone: 0.9rem;
 //Colors
 $dark-color: black;
 $light-color: white;
+
+footer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    text-align: center;
+
+    span {
+        opacity: 0.5;
+        font-size: 0.8rem;
+    }
+}
 
 //Video Background
 .video-container video {

@@ -201,13 +201,13 @@ export default {
     }
     .container .grid-container {
       .first-item {
-        margin-top: 10vh;
-        margin-bottom: 50px;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
       }
 
       .second-item,
       .third-item {
-        margin-bottom: 50px;
+        margin-bottom: 5vh;
       }
       .grid-item-left,
       .grid-item-right {
@@ -250,12 +250,12 @@ export default {
     .container {
       .grid-container {
         .first-item {
-          margin-top: 10vh;
-          margin-bottom: 10vh;
+          margin-top: 5vh;
+          margin-bottom: 5vh;
         }
         .second-item,
         .third-item {
-          margin-bottom: 10vh;
+          margin-bottom: 5vh;
         }
 
         .grid-item-left,

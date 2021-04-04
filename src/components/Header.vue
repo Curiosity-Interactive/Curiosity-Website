@@ -44,6 +44,7 @@ header {
 
   //Company Logo
   img {
+    margin-top: 50px;
     z-index: 1;
     opacity: 0.8;
     width: 600px;

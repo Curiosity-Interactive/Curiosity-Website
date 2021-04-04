@@ -64,12 +64,6 @@
   </div>
   <!-- View Home page -->
   <router-view />
-  <!-- Footer -->
-  <footer>
-    <span
-      >Tous droits réservés © Curiosity Interactive - {{ currentYear }}</span
-    >
-  </footer>
 </template>
 
 <script>
@@ -80,9 +74,6 @@ export default {
   data() {
     return {
       companyMiniLogo: image,
-      //Get current year for footer
-      currentYear: new Date().getFullYear(),
-      isActive: false,
     };
   },
   methods: {
@@ -152,23 +143,8 @@ body {
 //Text selection color change
 ::selection {
   color: $light-color;
-  background:$dark-color;
-  -webkit-text-fill-color: $light-color;
- 
-}
-
-//Footer
-footer {
   background: $dark-color;
-  color: $light-color;
-  height: 50px;
-  text-align: center;
-  padding-top: 10px;
-
-  span {
-    font-size: 0.7rem;
-    opacity: 0.5;
-  }
+  -webkit-text-fill-color: $light-color;
 }
 
 //Menu
@@ -190,7 +166,8 @@ footer {
       position: fixed;
       left: 0;
       top: 0;
-      background: $dark-color;
+      @extend .gradient-animation-values-shape;
+      @include animation("bgposition 12s infinite");
       z-index: 100;
       width: 100%;
       height: 50px;
@@ -200,8 +177,7 @@ footer {
 
     //Hamburger
     .hamburger {
-      @extend .gradient-animation-values-shape;
-      @include animation("bgposition 10s infinite");
+      background-color: $light-color;
       position: absolute;
       top: 23px;
       right: 15px;
@@ -213,8 +189,7 @@ footer {
 
       &:after,
       &:before {
-        @extend .gradient-animation-values-shape;
-        @include animation("bgposition 12s infinite");
+        background-color: $light-color;
         transition: 0.2s ease-in-out;
         content: "";
         position: absolute;
